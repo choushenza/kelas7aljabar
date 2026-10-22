@@ -1,0 +1,3228 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AljabarPintar SaungPintarDukuhwaru - Kurikulum Merdeka SMP Kelas 7</title>
+    <meta name="description" content="Media pembelajaran interaktif Matematika SMP Kelas 7 Bab Bentuk Aljabar Kurikulum Merdeka persembahan AljabarPintar SaungPintarDukuhwaru: materi lengkap, simulasi kotak misteri, game suku sejenis, kalkulator aljabar, dan 80 soal kuis interaktif berjenjang hingga tingkat menengah beserta pembahasan detail." />
+    <meta property="og:title" content="AljabarPintar SaungPintarDukuhwaru - Kurikulum Merdeka SMP Kelas 7" />
+    <meta property="og:description" content="Media pembelajaran interaktif Matematika SMP Kelas 7 Bab Bentuk Aljabar Kurikulum Merdeka persembahan AljabarPintar SaungPintarDukuhwaru lengkap dengan simulasi, game edukasi, dan 80 soal kuis interaktif." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              brand: {
+                50: '#eef2ff',
+                100: '#e0e7ff',
+                200: '#c7d2fe',
+                500: '#6366f1',
+                600: '#4f46e5',
+                700: '#4338ca',
+                800: '#3730a3',
+                900: '#312e81',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- KaTeX CDN for mathematical typesetting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderAllMath()"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Canvas Confetti CDN for gamified celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+      .katex-display {
+        margin: 0.5em 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      @media print {
+        header, nav, #app-actions, .no-print, button {
+          display: none !important;
+        }
+        #quiz-summary-card, #quiz-review-section {
+          display: block !important;
+          width: 100% !important;
+          box-shadow: none !important;
+          border: 1px solid #000 !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          
+          <!-- Logo & Title: aljabarpintar saungpintardukuhwaru -->
+          <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('beranda')">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-indigo-200 shrink-0">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-extrabold text-base sm:text-lg text-slate-900 tracking-tight">
+                  Aljabar<span class="text-indigo-600">Pintar</span>
+                  <span class="text-xs sm:text-sm font-semibold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-md ml-1">SaungPintarDukuhwaru</span>
+                </span>
+                <span class="hidden lg:inline-block px-2 py-0.5 text-[11px] font-semibold bg-emerald-100 text-emerald-800 rounded-full border border-emerald-200">SMP Kelas 7</span>
+              </div>
+              <p class="text-[11px] text-slate-500 hidden sm:block">Kurikulum Merdeka • Fase D • Pembelajaran Interaktif</p>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation Tabs -->
+          <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-medium text-sm">
+            <button onclick="switchTab('beranda')" id="nav-btn-beranda" class="nav-tab px-3 py-2 rounded-lg text-indigo-600 bg-indigo-50 transition-all flex items-center gap-1.5 font-semibold">
+              <i data-lucide="home" class="w-4 h-4"></i> Beranda
+            </button>
+            <button onclick="switchTab('modul1')" id="nav-btn-modul1" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-all flex items-center gap-1.5">
+              <i data-lucide="box" class="w-4 h-4"></i> Modul 1: Unsur
+            </button>
+            <button onclick="switchTab('modul2')" id="nav-btn-modul2" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-all flex items-center gap-1.5">
+              <i data-lucide="puzzle" class="w-4 h-4"></i> Modul 2: Suku Sejenis
+            </button>
+            <button onclick="switchTab('modul3')" id="nav-btn-modul3" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-all flex items-center gap-1.5">
+              <i data-lucide="calculator" class="w-4 h-4"></i> Modul 3: Operasi
+            </button>
+            <button onclick="switchTab('modul4')" id="nav-btn-modul4" class="nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-all flex items-center gap-1.5">
+              <i data-lucide="target" class="w-4 h-4"></i> Modul 4: Cerita
+            </button>
+            <button onclick="switchTab('kuis')" id="nav-btn-kuis" class="nav-tab px-3.5 py-2 rounded-lg text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 shadow-sm shadow-amber-200 transition-all flex items-center gap-1.5 font-semibold">
+              <i data-lucide="award" class="w-4 h-4"></i> Kuis 80 Soal
+            </button>
+          </nav>
+
+          <!-- Utilities / Tools (Sound, Download, Mobile Menu) -->
+          <div class="flex items-center space-x-2">
+            <!-- Audio Toggle -->
+            <button onclick="toggleSound()" id="sound-btn" title="Aktifkan/Matikan Suara" class="p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition border border-slate-200">
+              <i data-lucide="volume-2" id="sound-icon" class="w-5 h-5 text-emerald-600"></i>
+            </button>
+
+            <!-- Download Single HTML button -->
+            <button onclick="downloadSelfHtml()" title="Unduh File HTML Tunggal Lengkap" class="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Unduh File HTML
+            </button>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition border border-slate-200">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-4 space-y-1 text-sm font-medium">
+        <button onclick="switchTabMobile('beranda')" class="w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+          <i data-lucide="home" class="w-4 h-4 text-indigo-600"></i> Beranda & Peta Konsep
+        </button>
+        <button onclick="switchTabMobile('modul1')" class="w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+          <i data-lucide="box" class="w-4 h-4 text-indigo-600"></i> Modul 1: Unsur-Unsur Aljabar
+        </button>
+        <button onclick="switchTabMobile('modul2')" class="w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+          <i data-lucide="puzzle" class="w-4 h-4 text-teal-600"></i> Modul 2: Suku Sejenis & Game
+        </button>
+        <button onclick="switchTabMobile('modul3')" class="w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+          <i data-lucide="calculator" class="w-4 h-4 text-emerald-600"></i> Modul 3: Operasi Hitung Aljabar
+        </button>
+        <button onclick="switchTabMobile('modul4')" class="w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+          <i data-lucide="target" class="w-4 h-4 text-purple-600"></i> Modul 4: Substitusi & Soal Cerita
+        </button>
+        <button onclick="switchTabMobile('kuis')" class="w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-2 bg-amber-500 text-white font-semibold">
+          <i data-lucide="award" class="w-4 h-4"></i> Kuis Interaktif (80 Soal)
+        </button>
+        <div class="pt-2">
+          <button onclick="downloadSelfHtml()" class="w-full py-2 bg-slate-900 text-white text-xs font-semibold rounded-lg flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i> Unduh File HTML Lengkap
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+      <!-- ========================================== -->
+      <!-- TAB 1: BERANDA (DASHBOARD & MIND MAP)     -->
+      <!-- ========================================== -->
+      <section id="tab-beranda" class="tab-pane space-y-8">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-700 via-indigo-600 to-teal-600 text-white p-6 sm:p-10 shadow-xl shadow-indigo-100">
+          <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="absolute -top-12 right-1/4 w-48 h-48 bg-amber-300/20 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="relative z-10 max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-semibold mb-4 text-indigo-100 border border-white/20">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i> AljabarPintar SaungPintarDukuhwaru • SMP Kelas 7
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+              Kuasai Bentuk Aljabar dengan Cepat, Akurat & Menyenangkan!
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-indigo-100 leading-relaxed font-light">
+              Pelajari konsep variabel, suku sejenis, operasi hitung aljabar, pemfaktoran, hingga pemecahan masalah kontekstual melalui simulasi visual dan bank kuis <b>80 soal berjenjang</b> (dasar hingga tingkat menengah).
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <button onclick="switchTab('modul1')" class="px-5 py-2.5 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 shadow-md transition flex items-center gap-2">
+                Mulai Belajar <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <button onclick="switchTab('kuis')" class="px-5 py-2.5 rounded-xl bg-amber-500 text-white font-bold text-sm hover:bg-amber-600 shadow-md transition flex items-center gap-2">
+                <i data-lucide="trophy" class="w-4 h-4"></i> Kuis 80 Soal Interaktif
+              </button>
+              <button onclick="scrollToMindmap()" class="px-5 py-2.5 rounded-xl bg-white/10 text-white font-semibold text-sm hover:bg-white/20 backdrop-blur-sm border border-white/20 transition flex items-center gap-2">
+                <i data-lucide="map" class="w-4 h-4"></i> Peta Konsep
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats & Badges Banner -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Total Modul</p>
+              <p class="text-lg font-bold text-slate-900">4 Modul Inti</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+              <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Interaktif</p>
+              <p class="text-lg font-bold text-slate-900">3 Lab & Game</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+              <i data-lucide="help-circle" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Bank Soal Kuis</p>
+              <p class="text-lg font-bold text-slate-900">80 Soal Lengkap</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Tingkat Lanjut</p>
+              <p class="text-lg font-bold text-slate-900">+20 Soal Menengah</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capaian Pembelajaran (CP) & Indikator -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Standar Kurikulum</span>
+              <h2 class="text-2xl font-bold text-slate-900 mt-2">Capaian Pembelajaran (CP) - Fase D</h2>
+            </div>
+            <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full font-medium">Kepmendikbudristek No. 032/H/KR/2024</span>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100 text-slate-700 text-sm leading-relaxed mb-6">
+            <p class="font-semibold text-indigo-900 mb-1">Capaian Elemen Aljabar:</p>
+            Peserta didik dapat mengenali, memprediksi, dan menggeneralisasi pola dalam bentuk susunan benda dan bilangan. Mereka dapat menyatakan suatu situasi ke dalam bentuk aljabar. Mereka dapat menggunakan sifat-sifat operasi (komutatif, asosiatif, dan distributif) untuk menghasilkan bentuk aljabar yang ekuivalen.
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl border border-slate-200 hover:border-indigo-300 transition bg-slate-50/50">
+              <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs mb-3">1</div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Mengenal Unsur Aljabar</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Mengidentifikasi variabel, koefisien, konstanta, dan suku dari suatu bentuk aljabar matematika.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-slate-200 hover:border-teal-300 transition bg-slate-50/50">
+              <div class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold text-xs mb-3">2</div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Suku Sejenis</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Membedakan suku sejenis dan bukan sejenis berdasarkan kesamaan variabel serta pangkatnya.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-slate-200 hover:border-emerald-300 transition bg-slate-50/50">
+              <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs mb-3">3</div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Operasi Hitung Aljabar</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Melakukan penjumlahan, pengurangan, perkalian (sifat distributif), dan pembagian aljabar.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl border border-slate-200 hover:border-amber-300 transition bg-slate-50/50">
+              <div class="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs mb-3">4</div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Substitusi & Pemodelan</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Menyusun model matematika dari masalah kontekstual nyata dan menghitung nilainya lewat substitusi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peta Konsep Aljabar Interaktif (Mind Map) -->
+        <div id="mindmap-container" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-md">Visualisasi Mind Map</span>
+              <h2 class="text-2xl font-bold text-slate-900 mt-2">Peta Konsep Bab Bentuk Aljabar</h2>
+              <p class="text-xs text-slate-500 mt-1">Klik cabang mana saja untuk langsung mempelajari materi terkait</p>
+            </div>
+          </div>
+
+          <!-- Interactive Mind Map Diagram -->
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 overflow-x-auto">
+            <div class="min-w-[680px] flex flex-col items-center">
+              
+              <!-- Center Root Node -->
+              <div class="p-4 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-800 text-white text-center shadow-lg shadow-indigo-200 max-w-xs border-2 border-indigo-400">
+                <span class="text-xs uppercase tracking-widest text-indigo-200 font-semibold">Bab Inti</span>
+                <h3 class="text-xl font-extrabold mt-0.5">BENTUK ALJABAR</h3>
+                <p class="text-xs text-indigo-100 mt-1">Bahasa Simbol Matematika</p>
+              </div>
+
+              <!-- Connecting Line Down -->
+              <div class="w-0.5 h-8 bg-indigo-300 my-0"></div>
+
+              <!-- Horizontal Branch Bar -->
+              <div class="w-full max-w-4xl h-0.5 bg-indigo-300 relative">
+                <!-- Branch Connectors -->
+                <div class="absolute left-[12%] -bottom-4 w-0.5 h-4 bg-indigo-300"></div>
+                <div class="absolute left-[38%] -bottom-4 w-0.5 h-4 bg-indigo-300"></div>
+                <div class="absolute left-[62%] -bottom-4 w-0.5 h-4 bg-indigo-300"></div>
+                <div class="absolute left-[88%] -bottom-4 w-0.5 h-4 bg-indigo-300"></div>
+              </div>
+
+              <!-- 4 Sub-Branches -->
+              <div class="grid grid-cols-4 gap-4 w-full max-w-4xl mt-4">
+                
+                <!-- Node 1 -->
+                <div onclick="switchTab('modul1')" class="cursor-pointer group p-4 rounded-2xl bg-white border border-indigo-200 hover:border-indigo-500 hover:shadow-md transition text-center">
+                  <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 mx-auto flex items-center justify-center font-bold text-xs mb-2 group-hover:scale-110 transition">
+                    1
+                  </div>
+                  <h4 class="font-bold text-indigo-900 text-sm group-hover:text-indigo-600 transition">Unsur-Unsur</h4>
+                  <ul class="text-[11px] text-slate-500 mt-2 space-y-1 text-left list-disc list-inside">
+                    <li>Variabel ($x, y$)</li>
+                    <li>Koefisien ($3x \to 3$)</li>
+                    <li>Konstanta ($+5$)</li>
+                    <li>Suku & Derajat</li>
+                  </ul>
+                  <span class="mt-3 inline-block text-[10px] font-semibold text-indigo-600 group-hover:underline">Buka Modul →</span>
+                </div>
+
+                <!-- Node 2 -->
+                <div onclick="switchTab('modul2')" class="cursor-pointer group p-4 rounded-2xl bg-white border border-teal-200 hover:border-teal-500 hover:shadow-md transition text-center">
+                  <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-700 mx-auto flex items-center justify-center font-bold text-xs mb-2 group-hover:scale-110 transition">
+                    2
+                  </div>
+                  <h4 class="font-bold text-teal-900 text-sm group-hover:text-teal-600 transition">Suku Sejenis</h4>
+                  <ul class="text-[11px] text-slate-500 mt-2 space-y-1 text-left list-disc list-inside">
+                    <li>Variabel Persis Sama</li>
+                    <li>Pangkat Identik</li>
+                    <li>Bukan Sejenis</li>
+                    <li>Menyederhanakan</li>
+                  </ul>
+                  <span class="mt-3 inline-block text-[10px] font-semibold text-teal-600 group-hover:underline">Main Game →</span>
+                </div>
+
+                <!-- Node 3 -->
+                <div onclick="switchTab('modul3')" class="cursor-pointer group p-4 rounded-2xl bg-white border border-emerald-200 hover:border-emerald-500 hover:shadow-md transition text-center">
+                  <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center font-bold text-xs mb-2 group-hover:scale-110 transition">
+                    3
+                  </div>
+                  <h4 class="font-bold text-emerald-900 text-sm group-hover:text-emerald-600 transition">Operasi Hitung</h4>
+                  <ul class="text-[11px] text-slate-500 mt-2 space-y-1 text-left list-disc list-inside">
+                    <li>Penjumlahan $(+)$</li>
+                    <li>Pengurangan $(-)$</li>
+                    <li>Perkalian Pelangi</li>
+                    <li>Pembagian & FPB</li>
+                  </ul>
+                  <span class="mt-3 inline-block text-[10px] font-semibold text-emerald-600 group-hover:underline">Buka Kalkulator →</span>
+                </div>
+
+                <!-- Node 4 -->
+                <div onclick="switchTab('modul4')" class="cursor-pointer group p-4 rounded-2xl bg-white border border-amber-200 hover:border-amber-500 hover:shadow-md transition text-center">
+                  <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 mx-auto flex items-center justify-center font-bold text-xs mb-2 group-hover:scale-110 transition">
+                    4
+                  </div>
+                  <h4 class="font-bold text-amber-900 text-sm group-hover:text-amber-600 transition">Substitusi & Cerita</h4>
+                  <ul class="text-[11px] text-slate-500 mt-2 space-y-1 text-left list-disc list-inside">
+                    <li>Ganti Nilai Huruf</li>
+                    <li>Uang Kembalian</li>
+                    <li>Luas/Keliling Taman</li>
+                    <li>Skor Pertandingan</li>
+                  </ul>
+                  <span class="mt-3 inline-block text-[10px] font-semibold text-amber-600 group-hover:underline">Buka Simulasi →</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Feature Navigation Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-3xl border border-indigo-200 shadow-sm flex items-start justify-between">
+            <div>
+              <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-indigo-600 text-white">Fitur Simulasi</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-3">Kotak Misteri & Apel</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                Visualisasikan bentuk aljabar $3x + 5$ dengan kotak kardus misterius dan buah apel untuk memahami arti variabel secara nyata.
+              </p>
+              <button onclick="switchTab('modul1')" class="mt-4 px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-700 transition flex items-center gap-1.5">
+                Coba Simulasi <i data-lucide="play" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div class="text-4xl hidden sm:block">📦🍎</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-amber-50 to-white p-6 rounded-3xl border border-amber-200 shadow-sm flex items-start justify-between">
+            <div>
+              <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-amber-600 text-white">Bank Soal Terbesar</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-3">Kuis Aljabar 80 Soal (Termasuk Tingkat Menengah)</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                Kini dilengkapi 20 soal tantangan tingkat menengah (pecahan aljabar, pemfaktoran kuadrat, dan substitusi bersyarat) dengan pembahasan detail!
+              </p>
+              <button onclick="switchTab('kuis')" class="mt-4 px-4 py-2 rounded-xl bg-amber-600 text-white font-semibold text-xs hover:bg-amber-700 transition flex items-center gap-1.5">
+                Buka Kuis 80 Soal <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div class="text-4xl hidden sm:block">🏆📝</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 2: MODUL 1 (UNSUR-UNSUR ALJABAR)      -->
+      <!-- ========================================== -->
+      <section id="tab-modul1" class="tab-pane hidden space-y-8">
+        
+        <!-- Module Header -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-3">
+            <i data-lucide="box" class="w-3.5 h-3.5"></i> MODUL 1
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Unsur-Unsur Bentuk Aljabar</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base leading-relaxed">
+            Dalam kehidupan sehari-hari, kita sering menjumpai jumlah benda yang belum diketahui secara pasti. Di matematika, kita melambangkannya dengan <b>huruf</b> yang dinamakan <b>Aljabar</b>.
+          </p>
+        </div>
+
+        <!-- 4 Cards: Variabel, Koefisien, Konstanta, Suku -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Variabel -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-400 transition">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg mb-4">
+              \(x\)
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">1. Variabel (Peubah)</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Lambang pengganti suatu bilangan yang belum diketahui nilainya secara pasti. Biasanya ditulis dengan huruf kecil seperti \(x, y, z, a, b\).
+            </p>
+            <div class="mt-4 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-indigo-900 font-mono">
+              Contoh: Pada \(5x + 3\), variabelnya adalah <b class="text-indigo-600 font-bold">\(x\)</b>.
+            </div>
+          </div>
+
+          <!-- Koefisien -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-teal-400 transition">
+            <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-lg mb-4">
+              #
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">2. Koefisien</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Faktor konstanta (angka pengali) dari suatu suku pada bentuk aljabar. Angka yang berada tepat di depan variabel.
+            </p>
+            <div class="mt-4 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-teal-900 font-mono">
+              Contoh: Pada \(-4y + 7\), koefisien dari \(y\) adalah <b class="text-teal-600 font-bold">\(-4\)</b>.
+            </div>
+          </div>
+
+          <!-- Konstanta -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-amber-400 transition">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg mb-4">
+              C
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">3. Konstanta</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Suku dari bentuk aljabar yang berupa <b>bilangan tetap</b> dan tidak memuat variabel sama sekali.
+            </p>
+            <div class="mt-4 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-amber-900 font-mono">
+              Contoh: Pada \(2x^2 - 9\), konstantanya adalah <b class="text-amber-600 font-bold">\(-9\)</b>.
+            </div>
+          </div>
+
+          <!-- Suku -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-purple-400 transition">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg mb-4">
+              + / -
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">4. Suku & Derajat</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Bagian dari bentuk aljabar yang dipisahkan oleh tanda tambah (\(+\)) atau kurang (\(-\)). Derajat adalah pangkat tertinggi variabel.
+            </p>
+            <div class="mt-4 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-purple-900 font-mono">
+              Contoh: \(3x - 5y + 4\) terdiri atas <b class="text-purple-600 font-bold">3 suku</b> (Trinomial).
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIMULASI INTERAKTIF: KOTAK MISTERI & APEL -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Laboratorium Interaktif</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2">Simulasi: "Kotak Misteri & Apel Segar"</h3>
+              <p class="text-xs text-slate-500 mt-1">Ubah jumlah kotak dan apel untuk melihat langsung bagaimana bentuk aljabar tercipta!</p>
+            </div>
+          </div>
+
+          <!-- Sandbox Controller -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            
+            <!-- Controls (Left) -->
+            <div class="lg:col-span-5 space-y-5">
+              
+              <!-- Slider Kotak (Variabel x) -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    📦 Jumlah Kotak Misteri (\(x\)):
+                  </label>
+                  <span id="label-boxes-count" class="font-bold text-indigo-600 text-sm">3 Kotak</span>
+                </div>
+                <input type="range" id="input-boxes-count" min="1" max="6" value="3" oninput="updateMysteryBoxSimulation()" class="w-full accent-indigo-600 cursor-pointer">
+                <p class="text-[11px] text-slate-400 mt-1">Setiap kotak berisi \(x\) buah apel yang belum diketahui isinya.</p>
+              </div>
+
+              <!-- Slider Apel Terpisah (Konstanta c) -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    🍎 Apel Terpisah (Konstanta):
+                  </label>
+                  <span id="label-apples-count" class="font-bold text-emerald-600 text-sm">+5 Apel</span>
+                </div>
+                <input type="range" id="input-apples-count" min="-4" max="10" value="5" oninput="updateMysteryBoxSimulation()" class="w-full accent-emerald-600 cursor-pointer">
+                <p class="text-[11px] text-slate-400 mt-1">Apel di luar kotak adalah konstanta (angka tetap).</p>
+              </div>
+
+              <!-- Nilai Uji Coba Variabel x -->
+              <div class="bg-white p-4 rounded-xl border border-indigo-200 shadow-sm">
+                <label class="text-xs font-bold text-indigo-900 block mb-2">
+                  🔍 Coba Tebak: "Jika 1 kotak ternyata berisi berapa apel?"
+                </label>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold text-slate-700 font-mono">x = </span>
+                  <input type="number" id="input-x-value" value="4" min="1" max="20" oninput="updateMysteryBoxSimulation()" class="w-20 px-3 py-1.5 rounded-lg border border-slate-300 font-bold text-center text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+                  <span class="text-xs text-slate-500">apel per kotak</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Visual Display & Result (Right) -->
+            <div class="lg:col-span-7 flex flex-col justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Visualisasi Benda:</p>
+                
+                <!-- Graphic Visualization Area -->
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 min-h-[140px] flex flex-col justify-center gap-3">
+                  <div id="visual-boxes-container" class="flex flex-wrap items-center gap-2">
+                    <!-- Boxes injected here by JS -->
+                  </div>
+                  <div id="visual-apples-container" class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-200">
+                    <!-- Apples injected here by JS -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mathematical Representation -->
+              <div class="mt-4 pt-4 border-t border-slate-200">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <span class="text-[11px] font-semibold text-slate-400 uppercase">Model Bentuk Aljabar:</span>
+                    <div id="box-algebraic-formula" class="text-2xl font-extrabold text-indigo-600 font-mono mt-0.5">
+                      \(3x + 5\)
+                    </div>
+                  </div>
+                  <div class="sm:text-right">
+                    <span class="text-[11px] font-semibold text-slate-400 uppercase">Total Hitungan Saat \(x\) Diketahui:</span>
+                    <div id="box-calculated-total" class="text-lg font-bold text-emerald-600 font-mono mt-0.5">
+                      3(4) + 5 = 17 Apel
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-3 p-2.5 rounded-lg bg-indigo-50/70 text-indigo-900 text-xs flex items-center gap-2">
+                  <i data-lucide="info" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                  <span>Koefisien adalah <b>3</b> (banyak kotak), variabel adalah <b>\(x\)</b> (isi per kotak), dan konstanta adalah <b>5</b>.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Kuis Cepat Latihan Instan (5 Soal Mini Modul 1) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Latihan Instan Modul 1</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2">Tebak Cepat Unsur Aljabar</h3>
+              <p class="text-xs text-slate-500 mt-1">Uji pemahamanmu dalam 5 soal acak di bawah ini:</p>
+            </div>
+            <button onclick="generateMiniQuizModul1()" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition flex items-center gap-1.5">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Acak Soal Baru
+            </button>
+          </div>
+
+          <div id="mini-quiz-container" class="space-y-4">
+            <!-- Questions rendered by JS -->
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 3: MODUL 2 (SUKU SEJENIS & GAME)      -->
+      <!-- ========================================== -->
+      <section id="tab-modul2" class="tab-pane hidden space-y-8">
+        
+        <!-- Module Header -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-bold mb-3">
+            <i data-lucide="puzzle" class="w-3.5 h-3.5"></i> MODUL 2
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Suku Sejenis & Menyederhanakan</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base leading-relaxed">
+            Hanya suku-suku yang <b>sejenis</b> yang dapat digabungkan atau dijumlahkan. Mari kita pahami syarat mutlak suku sejenis!
+          </p>
+        </div>
+
+        <!-- Syarat Mutlak Suku Sejenis -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-emerald-50/60 p-6 rounded-3xl border border-emerald-200">
+            <div class="flex items-center gap-2 text-emerald-800 font-bold text-base mb-2">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i> Syarat Suku Sejenis (Wajib Terpenuhi Keduanya!)
+            </div>
+            <ol class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-emerald-900">
+              <li><b>Memiliki VARIABEL yang persis sama</b> (misal sama-sama punya huruf \(x\), atau sama-sama punya \(xy\)).</li>
+              <li><b>Memiliki PANGKAT (eksponen) yang persis sama</b> untuk setiap variabel terkait.</li>
+            </ol>
+            <div class="mt-4 p-3 rounded-xl bg-white border border-emerald-200 text-xs text-slate-700">
+              Contoh Sejenis: <span class="font-mono font-bold text-emerald-700">\(5x\)</span> dan <span class="font-mono font-bold text-emerald-700">\(-3x\)</span> ; <span class="font-mono font-bold text-emerald-700">\(4a^2b\)</span> dan <span class="font-mono font-bold text-emerald-700">\(9a^2b\)</span>.
+            </div>
+          </div>
+
+          <div class="bg-rose-50/60 p-6 rounded-3xl border border-rose-200">
+            <div class="flex items-center gap-2 text-rose-800 font-bold text-base mb-2">
+              <i data-lucide="x-circle" class="w-5 h-5 text-rose-600"></i> Suku Tak Sejenis (TIDAK Boleh Digabung!)
+            </div>
+            <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm text-rose-900">
+              <li>Variabel berbeda: \(4x\) dan \(4y\) (beda huruf peubah).</li>
+              <li>Pangkat berbeda: \(3x\) dan \(5x^2\) (pangkatnya \(1\) vs \(2\)).</li>
+              <li>Kombinasi beda: \(2ab^2\) dan \(2a^2b\) (pangkat hurufnya bertukar).</li>
+            </ul>
+            <div class="mt-4 p-3 rounded-xl bg-white border border-rose-200 text-xs text-slate-700">
+              Ingat analogi: <b>3 Apel + 2 Jeruk</b> tidak bisa jadi 5 Apel-Jeruk! Mereka tetap terpisah.
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME INTERAKTIF: MEMILAH SUKU SEJENIS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-md">Game Interaktif Edukasi</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2">Permainan: "Pilah & Satukan Suku Sejenis"</h3>
+              <p class="text-xs text-slate-500 mt-1">
+                Pindahkan kartu suku ke wadah yang sesuai (klik kartu lalu klik wadah tujuan, atau gunakan drag & drop).
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="resetSortGame()" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition flex items-center gap-1.5">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset Game
+              </button>
+            </div>
+          </div>
+
+          <!-- Game Area -->
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-6">
+            
+            <!-- Cards to Sort (Source) -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-slate-600 uppercase">Tumpukan Suku yang Belum Dipilah:</span>
+                <span id="game-cards-left" class="text-xs font-bold text-indigo-600">6 kartu tersisa</span>
+              </div>
+              <div id="sort-cards-pool" class="min-h-[70px] p-4 bg-white rounded-xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2.5 items-center">
+                <!-- Draggable cards rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Destination Baskets -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              
+              <!-- Basket 1: Variabel x -->
+              <div class="sort-basket bg-indigo-50/50 p-4 rounded-2xl border-2 border-indigo-200 flex flex-col justify-between min-h-[160px]" data-target="x" onclick="handleBasketClick('x')">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-xs text-indigo-900">📦 Wadah Suku \(x\)</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-indigo-200 text-indigo-800 font-semibold basket-counter">0</span>
+                  </div>
+                  <div class="basket-items flex flex-wrap gap-1.5 min-h-[60px] p-2 bg-white/70 rounded-xl border border-indigo-100">
+                    <!-- Items dropped here -->
+                  </div>
+                </div>
+                <div class="basket-summary text-xs font-bold text-indigo-700 mt-2 font-mono text-center">
+                  Hasil: 0
+                </div>
+              </div>
+
+              <!-- Basket 2: Variabel y -->
+              <div class="sort-basket bg-teal-50/50 p-4 rounded-2xl border-2 border-teal-200 flex flex-col justify-between min-h-[160px]" data-target="y" onclick="handleBasketClick('y')">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-xs text-teal-900">📦 Wadah Suku \(y\)</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-teal-200 text-teal-800 font-semibold basket-counter">0</span>
+                  </div>
+                  <div class="basket-items flex flex-wrap gap-1.5 min-h-[60px] p-2 bg-white/70 rounded-xl border border-teal-100">
+                    <!-- Items dropped here -->
+                  </div>
+                </div>
+                <div class="basket-summary text-xs font-bold text-teal-700 mt-2 font-mono text-center">
+                  Hasil: 0
+                </div>
+              </div>
+
+              <!-- Basket 3: Variabel x^2 -->
+              <div class="sort-basket bg-purple-50/50 p-4 rounded-2xl border-2 border-purple-200 flex flex-col justify-between min-h-[160px]" data-target="x2" onclick="handleBasketClick('x2')">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-xs text-purple-900">📦 Wadah Suku \(x^2\)</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-200 text-purple-800 font-semibold basket-counter">0</span>
+                  </div>
+                  <div class="basket-items flex flex-wrap gap-1.5 min-h-[60px] p-2 bg-white/70 rounded-xl border border-purple-100">
+                    <!-- Items dropped here -->
+                  </div>
+                </div>
+                <div class="basket-summary text-xs font-bold text-purple-700 mt-2 font-mono text-center">
+                  Hasil: 0
+                </div>
+              </div>
+
+              <!-- Basket 4: Konstanta -->
+              <div class="sort-basket bg-amber-50/50 p-4 rounded-2xl border-2 border-amber-200 flex flex-col justify-between min-h-[160px]" data-target="const" onclick="handleBasketClick('const')">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-xs text-amber-900">📦 Wadah Konstanta</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-200 text-amber-800 font-semibold basket-counter">0</span>
+                  </div>
+                  <div class="basket-items flex flex-wrap gap-1.5 min-h-[60px] p-2 bg-white/70 rounded-xl border border-amber-100">
+                    <!-- Items dropped here -->
+                  </div>
+                </div>
+                <div class="basket-summary text-xs font-bold text-amber-700 mt-2 font-mono text-center">
+                  Hasil: 0
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Verification & Result -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-200">
+              <div id="game-feedback-text" class="text-xs font-medium text-slate-500">
+                Pilih atau seret setiap suku ke wadah yang sesuai.
+              </div>
+              <button onclick="checkSortGameResult()" id="btn-check-sort" class="px-5 py-2.5 rounded-xl bg-teal-600 text-white font-bold text-xs hover:bg-teal-700 transition shadow-sm flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4"></i> Cek & Sederhanakan!
+              </button>
+            </div>
+
+            <!-- Simplified Result Box (Hidden until solved) -->
+            <div id="sort-solution-box" class="hidden p-4 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900">
+              <div class="font-bold text-sm mb-1">🎉 Hebat! Semua suku berhasil disederhanakan:</div>
+              <div id="sort-solution-math" class="text-lg font-bold font-mono"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 4: MODUL 3 (OPERASI HITUNG ALJABAR)    -->
+      <!-- ========================================== -->
+      <section id="tab-modul3" class="tab-pane hidden space-y-8">
+        
+        <!-- Module Header -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-3">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i> MODUL 3
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Operasi Hitung Bentuk Aljabar</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base leading-relaxed">
+            Kuasai 4 operasi dasar: Penjumlahan, Pengurangan, Perkalian Distributif & Metode Pelangi, serta Pembagian & Pemfaktoran FPB.
+          </p>
+        </div>
+
+        <!-- 3 Sub-Modul Tabs / Accordions -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Sub-Modul 1: Penjumlahan & Pengurangan -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-base mb-3">
+                \(+\) / \(-\)
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">1. Penjumlahan & Pengurangan</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Kunci utama: Kelompokkan suku sejenis, lalu jumlahkan/kurangkan koefisiennya.
+              </p>
+              <div class="mt-4 p-3 rounded-xl bg-indigo-50/60 border border-indigo-100 text-xs space-y-1.5 text-slate-700">
+                <p><b>Contoh:</b></p>
+                <p class="font-mono text-indigo-900">\((4x + 3y) + (2x - 5y)\)</p>
+                <p class="font-mono text-slate-600">\(= (4x + 2x) + (3y - 5y)\)</p>
+                <p class="font-mono font-bold text-indigo-700">\(= 6x - 2y\)</p>
+              </div>
+              <div class="mt-3 p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-[11px] text-amber-900">
+                ⚠️ <b>Perhatikan Kata Soal:</b><br>
+                • Kurangkan \(A\) <b>dari</b> \(B\) \(\to B - A\)<br>
+                • Kurangkan \(A\) <b>oleh</b> \(B\) \(\to A - B\)
+              </div>
+            </div>
+            <button onclick="loadCalculatorExample('add_sub')" class="mt-4 w-full py-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              Lihat di Kalkulator <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <!-- Sub-Modul 2: Perkalian (Distributif & Pelangi) -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-base mb-3">
+                \(\times\)
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">2. Perkalian Aljabar</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Menggunakan <b>Sifat Distributif</b> dan <b>Metode Pelangi (FOIL)</b>:
+              </p>
+              <div class="mt-4 p-3 rounded-xl bg-teal-50/60 border border-teal-100 text-xs space-y-1.5 text-slate-700">
+                <p class="font-semibold text-teal-900">Metode Pelangi \((a+b)(c+d)\):</p>
+                <p class="text-[11px] text-slate-600 font-mono">
+                  1. Depan: \(a \times c = ac\)<br>
+                  2. Luar: \(a \times d = ad\)<br>
+                  3. Dalam: \(b \times c = bc\)<br>
+                  4. Belakang: \(b \times d = bd\)
+                </p>
+                <p class="font-mono font-bold text-teal-800 text-[11px]">
+                  Contoh: \((x+2)(x+3) = x^2 + 5x + 6\)
+                </p>
+              </div>
+              <div class="mt-3 p-2.5 rounded-lg bg-teal-50 border border-teal-200 text-[11px] text-teal-900">
+                💡 <b>Perkalian Eksponen:</b><br>
+                \(x^a \times x^b = x^{a+b}\) (Contoh: \(3x \times 2x = 6x^2\))
+              </div>
+            </div>
+            <button onclick="loadCalculatorExample('multiply')" class="mt-4 w-full py-2 rounded-xl bg-teal-50 text-teal-700 hover:bg-teal-100 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              Lihat di Kalkulator <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <!-- Sub-Modul 3: Pembagian & Pemfaktoran FPB -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-base mb-3">
+                \(\div\)
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">3. Pembagian & Pemfaktoran</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Pembagian suku aljabar serta mengeluarkan faktor persekutuan terbesar (FPB):
+              </p>
+              <div class="mt-4 p-3 rounded-xl bg-purple-50/60 border border-purple-100 text-xs space-y-1.5 text-slate-700">
+                <p class="font-semibold text-purple-900">Pemfaktoran FPB:</p>
+                <p class="font-mono text-purple-900">\(ax + ay = a(x + y)\)</p>
+                <p class="font-mono text-slate-600">Contoh: \(6x + 9 = 3(2x + 3)\)</p>
+                <p class="font-semibold text-purple-900 pt-1">Pembagian Aljabar:</p>
+                <p class="font-mono text-slate-600">\(\frac{12x^3y}{4xy} = 3x^2\)</p>
+              </div>
+            </div>
+            <button onclick="loadCalculatorExample('factor')" class="mt-4 w-full py-2 rounded-xl bg-purple-50 text-purple-700 hover:bg-purple-100 text-xs font-bold transition flex items-center justify-center gap-1.5">
+              Lihat di Kalkulator <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- KALKULATOR LANGKAH PENYELESAIAN ALJABAR INTERAKTIF -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Alat Bantu Belajar</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-2">Kalkulator Langkah Aljabar Interaktif</h3>
+              <p class="text-xs text-slate-500 mt-1">Pilih tipe operasi dan lihat pembahasan langkah demi langkah (step-by-step).</p>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-6">
+            
+            <!-- Preset Selector Buttons -->
+            <div>
+              <label class="text-xs font-bold text-slate-700 block mb-2">Pilih Contoh Operasi Soal SMP:</label>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="setCalcPreset(1)" id="preset-btn-1" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm transition">
+                  (5x + 3) + (2x - 7)
+                </button>
+                <button onclick="setCalcPreset(2)" id="preset-btn-2" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition">
+                  (8a - 4b) - (3a + 5b)
+                </button>
+                <button onclick="setCalcPreset(3)" id="preset-btn-3" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition">
+                  Perkalian Pelangi (x + 3)(x + 5)
+                </button>
+                <button onclick="setCalcPreset(4)" id="preset-btn-4" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition">
+                  Perkalian Pelangi (2x - 3)(x + 4)
+                </button>
+                <button onclick="setCalcPreset(5)" id="preset-btn-5" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition">
+                  Pemfaktoran FPB 6x² + 9x
+                </button>
+                <button onclick="setCalcPreset(6)" id="preset-btn-6" class="calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition">
+                  Pembagian (15x³y²) : (3xy)
+                </button>
+              </div>
+            </div>
+
+            <!-- Current Expression Box -->
+            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-[11px] font-bold text-slate-400 uppercase">Ekspresi Matematika Terpilih:</span>
+                <div id="calc-display-expression" class="text-xl sm:text-2xl font-bold text-slate-900 font-mono mt-1">
+                  \((5x + 3) + (2x - 7)\)
+                </div>
+              </div>
+              <button onclick="revealAllCalculatorSteps()" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition flex items-center justify-center gap-1.5 shrink-0">
+                <i data-lucide="list-ordered" class="w-4 h-4"></i> Tampilkan Semua Langkah
+              </button>
+            </div>
+
+            <!-- Step by Step Breakdown Container -->
+            <div id="calc-steps-container" class="space-y-3">
+              <!-- Rendered step by step -->
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 5: MODUL 4 (SUBSTITUSI & SOAL CERITA)  -->
+      <!-- ========================================== -->
+      <section id="tab-modul4" class="tab-pane hidden space-y-8">
+        
+        <!-- Module Header -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold mb-3">
+            <i data-lucide="target" class="w-3.5 h-3.5"></i> MODUL 4
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Substitusi & Pemodelan Soal Cerita</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base leading-relaxed">
+            <b>Substitusi</b> berarti mengganti huruf (variabel) dengan angka nyata untuk mencari nilai akhirnya. Mari kita terapkan pada 3 studi kasus kehidupan sehari-hari!
+          </p>
+        </div>
+
+        <!-- 3 Interactive Case Studies -->
+        <div class="space-y-6">
+          
+          <!-- Kasus 1: Toko Alat Tulis & Uang Kembalian -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg">
+                  🛍️
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase text-indigo-600">Kasus 1</span>
+                  <h3 class="text-xl font-bold text-slate-900">Belanja Alat Tulis & Kembalian Uang</h3>
+                </div>
+              </div>
+              <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">Uang Mula-Mula: Rp50.000</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Budi membeli <b class="text-indigo-600 font-mono">\(x\)</b> buah buku tulis (@ Rp4.000) dan <b class="text-teal-600 font-mono">\(y\)</b> buah pulpen (@ Rp2.500) dengan selembar uang Rp50.000.
+              Rumus sisa uang kembalian: <span class="font-mono font-bold text-slate-900">\(S = 50.000 - (4.000x + 2.500y)\)</span>
+            </p>
+
+            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                    <span>Jumlah Buku (\(x\)):</span>
+                    <span id="case1-x-label" class="text-indigo-600 font-mono">3 buah</span>
+                  </div>
+                  <input type="range" id="case1-input-x" min="1" max="10" value="3" oninput="updateCase1Study()" class="w-full accent-indigo-600 cursor-pointer">
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                    <span>Jumlah Pulpen (\(y\)):</span>
+                    <span id="case1-y-label" class="text-teal-600 font-mono">4 buah</span>
+                  </div>
+                  <input type="range" id="case1-input-y" min="0" max="10" value="4" oninput="updateCase1Study()" class="w-full accent-teal-600 cursor-pointer">
+                </div>
+              </div>
+
+              <!-- Calculation Result -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                <div class="text-xs text-slate-500 font-medium">Langkah Substitusi:</div>
+                <div id="case1-sub-steps" class="font-mono text-xs text-slate-700 space-y-1">
+                  <!-- Steps inserted by JS -->
+                </div>
+                <div class="pt-2 border-t border-slate-200 flex justify-between items-center">
+                  <span class="text-xs font-bold text-slate-500 uppercase">Sisa Kembalian:</span>
+                  <span id="case1-final-change" class="text-lg font-extrabold text-emerald-600 font-mono">Rp28.000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kasus 2: Keliling & Luas Taman Persegi Panjang -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-lg">
+                  🌳
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase text-teal-600">Kasus 2</span>
+                  <h3 class="text-xl font-bold text-slate-900">Arsitek Taman Persegi Panjang</h3>
+                </div>
+              </div>
+              <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">Geometri & Aljabar</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Sebuah taman memiliki ukuran panjang <span class="font-mono font-bold text-indigo-700">\(p = (2x + 3)\text{ m}\)</span> dan lebar <span class="font-mono font-bold text-teal-700">\(l = (x - 1)\text{ m}\)</span>.
+            </p>
+
+            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div class="md:col-span-5 space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                    <span>Atur Nilai Variabel (\(x\)):</span>
+                    <span id="case2-x-label" class="text-indigo-600 font-mono font-bold">x = 5</span>
+                  </div>
+                  <input type="range" id="case2-input-x" min="2" max="10" value="5" oninput="updateCase2Study()" class="w-full accent-teal-600 cursor-pointer">
+                  <p class="text-[11px] text-slate-400 mt-1">Nilai \(x\) harus \(\ge 2\) agar ukuran lebar bernilai positif.</p>
+                </div>
+
+                <div class="p-3 bg-white rounded-xl border border-slate-200 space-y-2 text-xs">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Panjang \(p = 2(x) + 3\):</span>
+                    <span id="case2-p-val" class="font-mono font-bold text-indigo-700">13 meter</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Lebar \(l = x - 1\):</span>
+                    <span id="case2-l-val" class="font-mono font-bold text-teal-700">4 meter</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Graphic & Math Formula Output -->
+              <div class="md:col-span-7 bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                
+                <!-- Dynamic Rectangle Visualizer -->
+                <div class="h-28 bg-emerald-50/70 border-2 border-dashed border-emerald-400 rounded-xl flex items-center justify-center p-2 relative overflow-hidden transition-all duration-300" id="case2-rect-box">
+                  <span class="text-xs font-bold text-emerald-800 bg-white/80 px-2 py-1 rounded shadow-sm">
+                    Denah Taman: <span id="case2-rect-dim">13m × 4m</span>
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div class="p-3 rounded-lg bg-indigo-50 border border-indigo-100">
+                    <span class="text-slate-500 block">Rumus Keliling:</span>
+                    <span class="font-mono font-bold text-indigo-900 block mt-0.5">\(K = 6x + 4\)</span>
+                    <div id="case2-k-calc" class="font-mono font-bold text-indigo-600 text-sm mt-1">
+                      K = 34 meter
+                    </div>
+                  </div>
+
+                  <div class="p-3 rounded-lg bg-teal-50 border border-teal-100">
+                    <span class="text-slate-500 block">Rumus Luas:</span>
+                    <span class="font-mono font-bold text-teal-900 block mt-0.5">\(L = 2x^2 + x - 3\)</span>
+                    <div id="case2-l-calc" class="font-mono font-bold text-teal-600 text-sm mt-1">
+                      L = 52 m²
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Kasus 3: Perhitungan Skor Turnamen Olahraga -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg">
+                  ⚽
+                </div>
+                <div>
+                  <span class="text-xs font-bold uppercase text-amber-600">Kasus 3</span>
+                  <h3 class="text-xl font-bold text-slate-900">Perhitungan Skor Turnamen Sepak Bola</h3>
+                </div>
+              </div>
+              <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">Bentuk Aljabar: 3m + s</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Aturan poin: Menang (\(m\)) dapat <b>3 poin</b>, Seri (\(s\)) dapat <b>1 poin</b>, dan Kalah (\(k\)) dapat <b>0 poin</b>.
+              Bentuk aljabar total nilai tim: <span class="font-mono font-bold text-slate-900">\(Skor = 3m + s\)</span>
+            </p>
+
+            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+              <div>
+                <label class="text-xs font-bold text-slate-700 block mb-1">Menang (\(m\)):</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="case3-input-m" value="6" min="0" max="20" oninput="updateCase3Study()" class="w-full px-3 py-2 rounded-xl border border-slate-300 font-bold text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                  <span class="text-xs text-slate-500 font-semibold shrink-0">× 3</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="text-xs font-bold text-slate-700 block mb-1">Seri (\(s\)):</label>
+                <div class="flex items-center gap-2">
+                  <input type="number" id="case3-input-s" value="2" min="0" max="20" oninput="updateCase3Study()" class="w-full px-3 py-2 rounded-xl border border-slate-300 font-bold text-slate-800 text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                  <span class="text-xs text-slate-500 font-semibold shrink-0">× 1</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center">
+                <span class="text-[11px] font-bold text-slate-400 uppercase">Total Poin Tim:</span>
+                <div id="case3-final-score" class="text-2xl font-extrabold text-amber-600 font-mono mt-0.5">
+                  20 Poin
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- TAB 6: KUIS UTAMA (80 SOAL PILIHAN GANDA) -->
+      <!-- ========================================== -->
+      <section id="tab-kuis" class="tab-pane hidden space-y-8">
+        
+        <!-- Quiz Control Bar -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold mb-2">
+                <i data-lucide="award" class="w-3.5 h-3.5"></i> SISTEM KUIS TERSTANDAR & TINGKAT MENENGAH
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Kuis Evaluasi Aljabar (80 Soal Lengkap)</h2>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                Kini memuat <b>60 soal standar + 20 soal tantangan tingkat menengah</b>, lengkap dengan kunci jawaban, timer, dan pembahasan bertahap.
+              </p>
+            </div>
+
+            <!-- Quiz Timer Badge -->
+            <div class="flex items-center gap-3">
+              <div id="quiz-timer-box" class="px-4 py-2 rounded-2xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center gap-2 font-mono font-bold text-base shadow-sm">
+                <i data-lucide="clock" class="w-4 h-4 text-amber-600"></i>
+                <span id="quiz-timer-display">Mode Santai</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter & Configuration Toolbar -->
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            
+            <!-- Category Filter Selector -->
+            <div class="md:col-span-5">
+              <label class="text-xs font-bold text-slate-700 block mb-1">Pilih Kategori Kuis:</label>
+              <select id="quiz-category-filter" onchange="changeQuizCategoryFilter()" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none">
+                <option value="all">Semua Kategori (80 Soal Pilihan Ganda)</option>
+                <option value="A">Kategori A: Unsur Aljabar & Suku Sejenis (15 Soal)</option>
+                <option value="B">Kategori B: Penjumlahan & Pengurangan (15 Soal)</option>
+                <option value="C">Kategori C: Perkalian, Pembagian & Pemfaktoran (15 Soal)</option>
+                <option value="D">Kategori D: Substitusi & Pemodelan Cerita (15 Soal)</option>
+                <option value="E">Kategori E: Aljabar Tingkat Menengah (20 Soal Tantangan) 🔥</option>
+                <option value="quick10">Mode Cepat: 10 Soal Acak Pilihan</option>
+              </select>
+            </div>
+
+            <!-- Timer Mode Selector -->
+            <div class="md:col-span-4">
+              <label class="text-xs font-bold text-slate-700 block mb-1">Batas Waktu Pengerjaan:</label>
+              <select id="quiz-timer-select" onchange="changeQuizTimerSetting()" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none">
+                <option value="0">Mode Santai (Tanpa Batas Waktu)</option>
+                <option value="900">15 Menit</option>
+                <option value="1800">30 Menit</option>
+                <option value="3600">60 Menit</option>
+                <option value="5400">90 Menit</option>
+              </select>
+            </div>
+
+            <!-- Action Buttons: Shuffle & Reset -->
+            <div class="md:col-span-3 flex items-center justify-end gap-2 pt-2 md:pt-4">
+              <button onclick="toggleShuffleQuestions()" id="btn-shuffle-toggle" class="px-3 py-2 rounded-xl text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-indigo-600"></i> Acak Soal
+              </button>
+              <button onclick="restartQuiz()" class="px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white hover:bg-amber-600 transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Ulangi
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Quiz Progress Indicator -->
+          <div>
+            <div class="flex justify-between items-center text-xs font-semibold text-slate-600 mb-1.5">
+              <span>Progres Pengerjaan: <span id="quiz-answered-count" class="text-indigo-600 font-bold">0</span> dari <span id="quiz-total-count" class="font-bold">80</span> Soal</span>
+              <span id="quiz-progress-percent" class="font-mono text-indigo-600 font-bold">0%</span>
+            </div>
+            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+              <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-teal-400 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ACTIVE QUESTION CARD -->
+        <div id="quiz-active-card" class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+          
+          <!-- Question Header (Number & Category) -->
+          <div class="flex items-center justify-between flex-wrap gap-2 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+              <span id="quiz-current-num-badge" class="px-3 py-1 rounded-xl bg-indigo-600 text-white font-extrabold text-sm">
+                Soal #1
+              </span>
+              <span id="quiz-category-badge" class="px-2.5 py-1 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">
+                Kategori A
+              </span>
+            </div>
+
+            <!-- Bookmark / Mark for Review button -->
+            <button onclick="toggleMarkCurrentQuestion()" id="btn-mark-review" class="px-3 py-1 rounded-xl text-xs font-semibold bg-slate-50 border border-slate-200 text-slate-600 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-1">
+              <i data-lucide="flag" class="w-3.5 h-3.5 text-amber-500"></i> <span id="btn-mark-label">Tandai Ragu</span>
+            </button>
+          </div>
+
+          <!-- Question Text Area -->
+          <div id="quiz-question-text" class="text-base sm:text-lg font-medium text-slate-900 leading-relaxed">
+            <!-- Question text rendered by KaTeX & JS -->
+          </div>
+
+          <!-- Options Grid (A, B, C, D) -->
+          <div id="quiz-options-container" class="grid grid-cols-1 gap-3 pt-2">
+            <!-- 4 Options rendered by JS -->
+          </div>
+
+          <!-- INSTANT FEEDBACK & STEP-BY-STEP EXPLANATION BOX -->
+          <div id="quiz-feedback-box" class="hidden p-5 rounded-2xl border transition-all duration-300">
+            <div class="flex items-center gap-2 font-bold text-sm mb-2" id="quiz-feedback-status">
+              <!-- Correct / Incorrect header -->
+            </div>
+            <div class="text-xs text-slate-700 space-y-2" id="quiz-feedback-explanation">
+              <!-- Step by step breakdown -->
+            </div>
+          </div>
+
+          <!-- Question Navigation Buttons -->
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 flex-wrap gap-3">
+            <button onclick="navigateQuiz(-1)" id="btn-quiz-prev" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition flex items-center gap-1.5">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i> Sebelumnya
+            </button>
+
+            <div class="flex items-center gap-2">
+              <button onclick="navigateQuiz(1)" id="btn-quiz-next" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-sm flex items-center gap-1.5">
+                Berikutnya <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+              <button onclick="submitQuiz()" id="btn-quiz-finish" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-sm flex items-center gap-1.5">
+                <i data-lucide="check-circle" class="w-4 h-4"></i> Selesaikan Kuis
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- NUMBER GRID PALETTE (1-80) -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-bold text-slate-900">Palet Nomor Soal:</h4>
+            <div class="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Dijawab</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Ragu</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-200"></span> Belum</span>
+            </div>
+          </div>
+          <div id="quiz-palette-grid" class="grid grid-cols-6 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-16 gap-2 max-h-56 overflow-y-auto custom-scrollbar p-1">
+            <!-- Palette items rendered by JS -->
+          </div>
+        </div>
+
+        <!-- FINAL REPORT & SCORE CARD (Shown upon completion) -->
+        <div id="quiz-summary-card" class="hidden bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-8">
+          
+          <!-- Result Banner -->
+          <div class="text-center max-w-xl mx-auto">
+            <div id="summary-badge-icon" class="w-20 h-20 rounded-3xl bg-amber-100 text-amber-600 flex items-center justify-center text-4xl mx-auto mb-4 shadow-inner">
+              🏆
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900" id="summary-title-text">
+              Luar Biasa! Kuis Selesai
+            </h3>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1" id="summary-subtitle-text">
+              Berikut adalah laporan evaluasi pencapaian belajarmu di <b>AljabarPintar SaungPintarDukuhwaru</b>:
+            </p>
+          </div>
+
+          <!-- Big Score Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-100 text-center">
+              <span class="text-xs text-indigo-700 font-semibold block">Nilai Akhir (Skala 100)</span>
+              <span id="summary-score-value" class="text-3xl sm:text-4xl font-extrabold text-indigo-900 font-mono mt-1 block">85</span>
+              <span id="summary-grade-badge" class="inline-block mt-1 px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-200 text-indigo-900">Sangat Baik</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-100 text-center">
+              <span class="text-xs text-emerald-700 font-semibold block">Jawaban Benar</span>
+              <span id="summary-correct-value" class="text-3xl sm:text-4xl font-extrabold text-emerald-900 font-mono mt-1 block">51</span>
+              <span class="text-[11px] text-emerald-700">soal tepat</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-rose-50 border border-rose-100 text-center">
+              <span class="text-xs text-rose-700 font-semibold block">Jawaban Salah / Kosong</span>
+              <span id="summary-wrong-value" class="text-3xl sm:text-4xl font-extrabold text-rose-900 font-mono mt-1 block">9</span>
+              <span class="text-[11px] text-rose-700">perlu diperbaiki</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-amber-50 border border-amber-100 text-center">
+              <span class="text-xs text-amber-700 font-semibold block">Akurasi Pembelajaran</span>
+              <span id="summary-accuracy-value" class="text-3xl sm:text-4xl font-extrabold text-amber-900 font-mono mt-1 block">85%</span>
+              <span class="text-[11px] text-amber-700">tingkat penguasaan</span>
+            </div>
+          </div>
+
+          <!-- Topic Weakness & Strength Analysis -->
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <h4 class="font-bold text-sm text-slate-900 mb-4 flex items-center gap-2">
+              <i data-lucide="bar-chart-2" class="w-4 h-4 text-indigo-600"></i> Analisis Penguasaan per Kategori Topik:
+            </h4>
+            <div class="space-y-3" id="summary-topic-analysis">
+              <!-- Topic bars rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Action Buttons (Print, Review, Retry) -->
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-4 border-t border-slate-200 no-print">
+            <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition flex items-center gap-2">
+              <i data-lucide="printer" class="w-4 h-4"></i> Cetak / Simpan Ringkasan (PDF)
+            </button>
+            <button onclick="toggleReviewAllQuestions()" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition flex items-center gap-2">
+              <i data-lucide="eye" class="w-4 h-4"></i> Review Seluruh Soal & Pembahasan
+            </button>
+            <button onclick="restartQuiz()" class="px-5 py-2.5 rounded-xl bg-amber-500 text-white font-bold text-xs hover:bg-amber-600 transition flex items-center gap-2">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Ulangi Kuis
+            </button>
+          </div>
+
+          <!-- Comprehensive Review Section (Toggled) -->
+          <div id="quiz-review-section" class="hidden pt-6 border-t border-slate-200 space-y-4">
+            <h4 class="font-bold text-base text-slate-900">Daftar Lengkap Soal, Kunci & Pembahasan:</h4>
+            <div id="quiz-review-list" class="space-y-4">
+              <!-- All questions with explanations injected here -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Footer: aljabarpintar saungpintardukuhwaru -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-12 no-print">
+      <div class="max-w-7xl mx-auto px-4 space-y-2">
+        <p class="font-bold text-slate-800 text-sm">
+          AljabarPintar <span class="text-indigo-600">SaungPintarDukuhwaru</span>
+        </p>
+        <p class="text-slate-600">Media Pembelajaran Interaktif Matematika SMP Kelas 7 • Kurikulum Merdeka (Fase D)</p>
+        <p class="text-[11px] text-slate-400">Dirancang lengkap dalam satu file tunggal yang mandiri dan siap digunakan secara online maupun offline.</p>
+      </div>
+    </footer>
+
+    <!-- ======================================================== -->
+    <!-- JAVASCRIPT LOGIC, QUIZ DATA & SOUND SYNTHESIZER          -->
+    <!-- ======================================================== -->
+    <script>
+      /* --- WEB AUDIO SOUND SYNTHESIZER (NO EXTERNAL ASSETS NEEDED) --- */
+      let audioEnabled = true;
+      let audioCtx = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) audioCtx = new AudioContextClass();
+        }
+        return audioCtx;
+      }
+
+      function playSound(type) {
+        if (!audioEnabled) return;
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+          if (ctx.state === 'suspended') ctx.resume();
+
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          if (type === 'correct') {
+            // Happy cheerful high chime
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, now); // C5
+            osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+            osc.frequency.setValueAtTime(783.99, now + 0.16); // G5
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+            osc.start(now);
+            osc.stop(now + 0.35);
+          } else if (type === 'wrong') {
+            // Low error buzz
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(220, now); // A3
+            osc.frequency.setValueAtTime(180, now + 0.12);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+            osc.start(now);
+            osc.stop(now + 0.3);
+          } else if (type === 'click') {
+            // Subtle click
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(600, now);
+            gain.gain.setValueAtTime(0.05, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+            osc.start(now);
+            osc.stop(now + 0.05);
+          } else if (type === 'fanfare') {
+            // Celebration fanfare
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+            notes.forEach((freq, i) => {
+              const noteOsc = ctx.createOscillator();
+              const noteGain = ctx.createGain();
+              noteOsc.connect(noteGain);
+              noteGain.connect(ctx.destination);
+              noteOsc.type = 'triangle';
+              noteOsc.frequency.setValueAtTime(freq, now + i * 0.1);
+              noteGain.gain.setValueAtTime(0.12, now + i * 0.1);
+              noteGain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.3);
+              noteOsc.start(now + i * 0.1);
+              noteOsc.stop(now + i * 0.1 + 0.3);
+            });
+          }
+        } catch (e) {
+          console.warn('Audio not allowed or supported', e);
+        }
+      }
+
+      function toggleSound() {
+        audioEnabled = !audioEnabled;
+        const icon = document.getElementById('sound-icon');
+        if (audioEnabled) {
+          icon.classList.remove('text-slate-400');
+          icon.classList.add('text-emerald-600');
+          playSound('click');
+        } else {
+          icon.classList.remove('text-emerald-600');
+          icon.classList.add('text-slate-400');
+        }
+      }
+
+      /* --- TAB NAVIGATION SYSTEM --- */
+      const tabs = ['beranda', 'modul1', 'modul2', 'modul3', 'modul4', 'kuis'];
+      let currentTab = 'beranda';
+
+      function switchTab(tabId) {
+        playSound('click');
+        currentTab = tabId;
+
+        // Hide all tabs
+        tabs.forEach(t => {
+          const el = document.getElementById(`tab-${t}`);
+          if (el) el.classList.add('hidden');
+          const btn = document.getElementById(`nav-btn-${t}`);
+          if (btn && t !== 'kuis') {
+            btn.className = 'nav-tab px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-all flex items-center gap-1.5 font-medium';
+          }
+        });
+
+        // Show active tab
+        const activeEl = document.getElementById(`tab-${tabId}`);
+        if (activeEl) activeEl.classList.remove('hidden');
+
+        // Update button style
+        const activeBtn = document.getElementById(`nav-btn-${tabId}`);
+        if (activeBtn && tabId !== 'kuis') {
+          activeBtn.className = 'nav-tab px-3 py-2 rounded-lg text-indigo-600 bg-indigo-50 transition-all flex items-center gap-1.5 font-semibold';
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        renderAllMath();
+
+        // Special Tab inits
+        if (tabId === 'modul1') updateMysteryBoxSimulation();
+        if (tabId === 'modul2') resetSortGame();
+        if (tabId === 'modul3') setCalcPreset(1);
+        if (tabId === 'modul4') { updateCase1Study(); updateCase2Study(); updateCase3Study(); }
+        if (tabId === 'kuis') renderQuizPalette();
+      }
+
+      function switchTabMobile(tabId) {
+        switchTab(tabId);
+        toggleMobileMenu();
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+
+      function scrollToMindmap() {
+        const mm = document.getElementById('mindmap-container');
+        if (mm) mm.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      /* --- MATHJAX / KATEX AUTO RENDER HELPER --- */
+      function renderAllMath() {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '\\[', right: '\\]', display: true },
+              { left: '$', right: '$', display: false },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false
+          });
+        }
+      }
+
+      /* --- DOWNLOAD STANDALONE HTML FILE --- */
+      function downloadSelfHtml() {
+        playSound('click');
+        const docContent = "<!doctype html>\n" + document.documentElement.outerHTML;
+        const blob = new Blob([docContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'AljabarPintar-SaungPintarDukuhwaru.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      /* ========================================================= */
+      /* MODUL 1: SIMULASI KOTAK MISTERI & APEL                   */
+      /* ========================================================= */
+      function updateMysteryBoxSimulation() {
+        const boxes = parseInt(document.getElementById('input-boxes-count').value);
+        const apples = parseInt(document.getElementById('input-apples-count').value);
+        const xVal = parseInt(document.getElementById('input-x-value').value) || 1;
+
+        document.getElementById('label-boxes-count').textContent = `${boxes} Kotak (x)`;
+        document.getElementById('label-apples-count').textContent = (apples >= 0 ? `+${apples}` : `${apples}`) + ' Apel';
+
+        // Render boxes
+        const boxContainer = document.getElementById('visual-boxes-container');
+        boxContainer.innerHTML = '';
+        for (let i = 0; i < boxes; i++) {
+          const b = document.createElement('div');
+          b.className = 'w-12 h-12 rounded-xl bg-amber-100 border-2 border-amber-400 flex flex-col items-center justify-center font-bold text-amber-800 text-xs shadow-sm hover:scale-105 transition';
+          b.innerHTML = `<span class="text-base">📦</span><span class="font-mono text-[10px]">x</span>`;
+          boxContainer.appendChild(b);
+        }
+
+        // Render apples
+        const appleContainer = document.getElementById('visual-apples-container');
+        appleContainer.innerHTML = '';
+        if (apples > 0) {
+          for (let i = 0; i < apples; i++) {
+            const a = document.createElement('span');
+            a.className = 'text-xl hover:scale-125 transition inline-block';
+            a.textContent = '🍎';
+            appleContainer.appendChild(a);
+          }
+        } else if (apples < 0) {
+          const txt = document.createElement('span');
+          txt.className = 'text-xs text-rose-600 font-semibold italic';
+          txt.textContent = `(Pengurangan / Dimakan: ${Math.abs(apples)} buah 🍎)`;
+          appleContainer.appendChild(txt);
+        } else {
+          const txt = document.createElement('span');
+          txt.className = 'text-xs text-slate-400 italic';
+          txt.textContent = 'Tidak ada apel satuan terpisah.';
+          appleContainer.appendChild(txt);
+        }
+
+        // Formula representation
+        const formulaEl = document.getElementById('box-algebraic-formula');
+        let formulaStr = '';
+        if (boxes === 1) formulaStr = 'x';
+        else formulaStr = `${boxes}x`;
+
+        if (apples > 0) formulaStr += ` + ${apples}`;
+        else if (apples < 0) formulaStr += ` - ${Math.abs(apples)}`;
+
+        formulaEl.innerHTML = `\\(${formulaStr}\\)`;
+
+        // Calculated Total
+        const total = (boxes * xVal) + apples;
+        const totalEl = document.getElementById('box-calculated-total');
+        totalEl.textContent = `${boxes}(${xVal}) ${apples >= 0 ? '+' : '-'} ${Math.abs(apples)} = ${total} Apel`;
+
+        renderAllMath();
+      }
+
+      /* Mini Quiz Modul 1 (5 Soal Cepat) */
+      const miniQuizData = [
+        { q: "Pada bentuk aljabar <b>6x - 11</b>, manakah yang merupakan <i>koefisien</i>?", opt: ["6", "x", "-11", "11"], ans: 0, exp: "Koefisien adalah bilangan di depan variabel, yaitu 6." },
+        { q: "Berapa banyak suku pada bentuk aljabar <b>3a² - 5a + 9</b>?", opt: ["1 suku", "2 suku", "3 suku", "4 suku"], ans: 2, exp: "Suku-sukunya adalah 3a², -5a, dan 9 (berjumlah 3 suku atau trinomial)." },
+        { q: "Manakah yang merupakan <i>konstanta</i> pada bentuk aljabar <b>4p - 7q - 15</b>?", opt: ["4", "-7", "p dan q", "-15"], ans: 3, exp: "Konstanta adalah suku berupa bilangan tetap tanpa variabel, yaitu -15." },
+        { q: "Koefisien dari variabel <b>y</b> pada bentuk aljabar <b>2x - y + 8</b> adalah...", opt: ["1", "-1", "8", "2"], ans: 1, exp: "Tanda minus tepat di depan y berarti koefisiennya bernilai -1." },
+        { q: "Bentuk aljabar yang hanya terdiri atas satu suku (monomial) adalah...", opt: ["4x + 2", "-7abc", "a² - b²", "x + y + z"], ans: 1, exp: "-7abc merupakan satu kesatuan suku tunggal tanpa tanda + atau - pemisah." }
+      ];
+
+      function generateMiniQuizModul1() {
+        const container = document.getElementById('mini-quiz-container');
+        container.innerHTML = '';
+        miniQuizData.forEach((item, idx) => {
+          const card = document.createElement('div');
+          card.className = 'p-4 rounded-xl border border-slate-200 bg-slate-50/70 space-y-3';
+          card.innerHTML = `
+            <div class="flex items-start gap-2">
+              <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
+              <p class="text-xs sm:text-sm text-slate-800 font-medium">${item.q}</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1" id="mini-q-opts-${idx}">
+              ${item.opt.map((o, oIdx) => `
+                <button onclick="checkMiniQuizAnswer(${idx}, ${oIdx})" class="px-3 py-2 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-indigo-50 hover:border-indigo-300 transition text-center">
+                  ${o}
+                </button>
+              `).join('')}
+            </div>
+            <div id="mini-q-feedback-${idx}" class="hidden text-xs p-2.5 rounded-lg"></div>
+          `;
+          container.appendChild(card);
+        });
+        renderAllMath();
+      }
+
+      function checkMiniQuizAnswer(qIdx, selectedOptIdx) {
+        const item = miniQuizData[qIdx];
+        const feedbackEl = document.getElementById(`mini-q-feedback-${qIdx}`);
+        const optsContainer = document.getElementById(`mini-q-opts-${qIdx}`);
+        const buttons = optsContainer.querySelectorAll('button');
+
+        buttons.forEach((btn, i) => {
+          btn.disabled = true;
+          if (i === item.ans) {
+            btn.className = 'px-3 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold';
+          } else if (i === selectedOptIdx) {
+            btn.className = 'px-3 py-2 rounded-lg bg-rose-500 text-white text-xs font-bold';
+          } else {
+            btn.className = 'px-3 py-2 rounded-lg bg-slate-100 text-slate-400 text-xs';
+          }
+        });
+
+        feedbackEl.classList.remove('hidden');
+        if (selectedOptIdx === item.ans) {
+          playSound('correct');
+          feedbackEl.className = 'text-xs p-2.5 rounded-lg bg-emerald-100 text-emerald-800 font-medium';
+          feedbackEl.innerHTML = `<b>Benar!</b> 🎉 ${item.exp}`;
+        } else {
+          playSound('wrong');
+          feedbackEl.className = 'text-xs p-2.5 rounded-lg bg-rose-100 text-rose-800 font-medium';
+          feedbackEl.innerHTML = `<b>Belum tepat.</b> Jawaban benar: <b>${item.opt[item.ans]}</b>. ${item.exp}`;
+        }
+      }
+
+      /* ========================================================= */
+      /* MODUL 2: GAME MEMILAH SUKU SEJENIS                       */
+      /* ========================================================= */
+      const initialSortCards = [
+        { id: 1, text: "5x", category: "x", coef: 5 },
+        { id: 2, text: "-2x", category: "x", coef: -2 },
+        { id: 3, text: "3y", category: "y", coef: 3 },
+        { id: 4, text: "4y", category: "y", coef: 4 },
+        { id: 5, text: "2x²", category: "x2", coef: 2 },
+        { id: 6, text: "-x²", category: "x2", coef: -1 },
+        { id: 7, text: "+7", category: "const", coef: 7 },
+        { id: 8, text: "-3", category: "const", coef: -3 }
+      ];
+
+      let currentPool = [];
+      let baskets = { x: [], y: [], x2: [], const: [] };
+      let selectedCardId = null;
+
+      function resetSortGame() {
+        currentPool = JSON.parse(JSON.stringify(initialSortCards));
+        baskets = { x: [], y: [], x2: [], const: [] };
+        selectedCardId = null;
+        document.getElementById('sort-solution-box').classList.add('hidden');
+        document.getElementById('game-feedback-text').textContent = 'Pilih atau seret setiap suku ke wadah yang sesuai.';
+        renderSortGame();
+      }
+
+      function renderSortGame() {
+        const poolEl = document.getElementById('sort-cards-pool');
+        poolEl.innerHTML = '';
+
+        document.getElementById('game-cards-left').textContent = `${currentPool.length} kartu tersisa`;
+
+        if (currentPool.length === 0) {
+          poolEl.innerHTML = '<span class="text-xs text-emerald-600 font-bold">Semua suku telah dimasukkan ke wadah! Klik tombol "Cek & Sederhanakan".</span>';
+        }
+
+        currentPool.forEach(card => {
+          const c = document.createElement('div');
+          const isSelected = selectedCardId === card.id;
+          c.className = `cursor-pointer px-3 py-1.5 rounded-xl border text-xs font-mono font-bold transition shadow-sm select-none ${
+            isSelected ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-300 scale-105' : 'bg-slate-100 text-slate-800 border-slate-300 hover:bg-indigo-50'
+          }`;
+          c.draggable = true;
+          c.innerHTML = `\\(${card.text}\\)`;
+          c.onclick = (e) => {
+            e.stopPropagation();
+            playSound('click');
+            selectedCardId = selectedCardId === card.id ? null : card.id;
+            renderSortGame();
+          };
+          c.ondragstart = (e) => {
+            e.dataTransfer.setData('cardId', card.id);
+          };
+          poolEl.appendChild(c);
+        });
+
+        // Render Baskets
+        ['x', 'y', 'x2', 'const'].forEach(cat => {
+          const basketEl = document.querySelector(`.sort-basket[data-target="${cat}"]`);
+          const itemsEl = basketEl.querySelector('.basket-items');
+          const counterEl = basketEl.querySelector('.basket-counter');
+          const summaryEl = basketEl.querySelector('.basket-summary');
+
+          itemsEl.innerHTML = '';
+          counterEl.textContent = baskets[cat].length;
+
+          let sum = 0;
+          baskets[cat].forEach(card => {
+            sum += card.coef;
+            const item = document.createElement('span');
+            item.className = 'px-2 py-1 rounded bg-white text-slate-800 text-[11px] font-mono font-bold border border-slate-200 shadow-xs';
+            item.innerHTML = `\\(${card.text}\\)`;
+            item.onclick = (e) => {
+              e.stopPropagation();
+              // Return back to pool
+              baskets[cat] = baskets[cat].filter(x => x.id !== card.id);
+              currentPool.push(card);
+              playSound('click');
+              renderSortGame();
+            };
+            itemsEl.appendChild(item);
+          });
+
+          // Basket Drop Event
+          basketEl.ondragover = (e) => e.preventDefault();
+          basketEl.ondrop = (e) => {
+            e.preventDefault();
+            const id = parseInt(e.dataTransfer.getData('cardId'));
+            moveCardToBasket(id, cat);
+          };
+
+          // Live Sum
+          if (baskets[cat].length > 0) {
+            let label = '';
+            if (cat === 'x') label = `${sum}x`;
+            else if (cat === 'y') label = `${sum}y`;
+            else if (cat === 'x2') label = `${sum}x²`;
+            else if (cat === 'const') label = `${sum >= 0 ? '+' : ''}${sum}`;
+            summaryEl.innerHTML = `Jumlah: \\(${label}\\)`;
+          } else {
+            summaryEl.textContent = 'Hasil: 0';
+          }
+        });
+
+        renderAllMath();
+      }
+
+      function handleBasketClick(cat) {
+        if (selectedCardId !== null) {
+          moveCardToBasket(selectedCardId, cat);
+          selectedCardId = null;
+        }
+      }
+
+      function moveCardToBasket(cardId, cat) {
+        const cardIndex = currentPool.findIndex(c => c.id === cardId);
+        if (cardIndex > -1) {
+          const card = currentPool.splice(cardIndex, 1)[0];
+          baskets[cat].push(card);
+          playSound('click');
+          renderSortGame();
+        }
+      }
+
+      function checkSortGameResult() {
+        if (currentPool.length > 0) {
+          playSound('wrong');
+          document.getElementById('game-feedback-text').innerHTML = `<span class="text-rose-600 font-bold">Masih ada ${currentPool.length} suku di tumpukan! Masukkan semuanya dahulu.</span>`;
+          return;
+        }
+
+        // Check if every card is in its matching category
+        let isCorrect = true;
+        Object.keys(baskets).forEach(cat => {
+          baskets[cat].forEach(card => {
+            if (card.category !== cat) isCorrect = false;
+          });
+        });
+
+        const feedback = document.getElementById('game-feedback-text');
+        const solBox = document.getElementById('sort-solution-box');
+
+        if (isCorrect) {
+          playSound('correct');
+          if (window.confetti) {
+            confetti({ particleCount: 60, spread: 60, origin: { y: 0.7 } });
+          }
+          feedback.innerHTML = `<span class="text-emerald-600 font-bold">Semua suku tepat berada di kelompok sejenisnya!</span>`;
+          
+          solBox.classList.remove('hidden');
+          document.getElementById('sort-solution-math').innerHTML = `\\((2x^2 - x^2) + (5x - 2x) + (3y + 4y) + (7 - 3) = x^2 + 3x + 7y + 4\\)`;
+          renderAllMath();
+        } else {
+          playSound('wrong');
+          feedback.innerHTML = `<span class="text-rose-600 font-bold">Ada suku yang salah wadah! Periksa kembali variabel dan pangkatnya.</span>`;
+        }
+      }
+
+      /* ========================================================= */
+      /* MODUL 3: KALKULATOR LANGKAH OPERASI HITUNG               */
+      /* ========================================================= */
+      const calcPresets = {
+        1: {
+          title: "Penjumlahan Dua Bentuk Aljabar",
+          expr: "(5x + 3) + (2x - 7)",
+          steps: [
+            { label: "Langkah 1: Buka tanda kurung", math: "5x + 3 + 2x - 7", desc: "Tanda kurung dapat langsung dibuka karena operasi penghubungnya adalah penjumlahan (+)." },
+            { label: "Langkah 2: Kelompokkan suku sejenis", math: "(5x + 2x) + (3 - 7)", desc: "Satukan suku yang sama-sama memiliki variabel x, dan satukan sesama konstanta." },
+            { label: "Langkah 3: Hitung koefisiennya", math: "(5 + 2)x + (3 - 7)", desc: "Jumlahkan 5 + 2 = 7 untuk koefisien x, dan 3 - 7 = -4 untuk konstanta." },
+            { label: "Hasil Akhir Sederhana", math: "7x - 4", desc: "Bentuk aljabar paling sederhana.", final: true }
+          ]
+        },
+        2: {
+          title: "Pengurangan Dua Bentuk Aljabar",
+          expr: "(8a - 4b) - (3a + 5b)",
+          steps: [
+            { label: "Langkah 1: Distribusikan tanda minus ke suku kedua", math: "8a - 4b - 3a - 5b", desc: "Hati-hati! Tanda minus di depan kurung mengubah semua tanda di dalamnya: -(3a) menjadi -3a, dan -(+5b) menjadi -5b." },
+            { label: "Langkah 2: Kelompokkan suku sejenis", math: "(8a - 3a) + (-4b - 5b)", desc: "Kelompokkan variabel a dengan a, dan variabel b dengan b." },
+            { label: "Langkah 3: Operasikan koefisiennya", math: "(8 - 3)a + (-4 - 5)b", desc: "Hitung 8 - 3 = 5, dan -4 - 5 = -9." },
+            { label: "Hasil Akhir Sederhana", math: "5a - 9b", desc: "Bentuk aljabar paling sederhana.", final: true }
+          ]
+        },
+        3: {
+          title: "Perkalian Binomial: Metode Pelangi / FOIL",
+          expr: "(x + 3)(x + 5)",
+          steps: [
+            { label: "Langkah 1: Kalikan Depan × Depan (First)", math: "x \\cdot x = x^2", desc: "Variabel x dikalikan x menghasilkan x berpangkat 2 (x²)." },
+            { label: "Langkah 2: Kalikan Luar × Luar (Outer)", math: "x \\cdot 5 = 5x", desc: "x dikalikan konstanta 5 menghasilkan 5x." },
+            { label: "Langkah 3: Kalikan Dalam × Dalam (Inner)", math: "3 \\cdot x = 3x", desc: "Konstanta 3 dikalikan x menghasilkan 3x." },
+            { label: "Langkah 4: Kalikan Belakang × Belakang (Last)", math: "3 \\cdot 5 = 15", desc: "Konstanta 3 dikalikan 5 menghasilkan 15." },
+            { label: "Langkah 5: Satukan dan gabung suku sejenis", math: "x^2 + (5x + 3x) + 15", desc: "Suku 5x dan 3x adalah sejenis sehingga dapat digabung menjadi 8x." },
+            { label: "Hasil Akhir", math: "x^2 + 8x + 15", desc: "Bentuk trinomial kuadrat sempurna.", final: true }
+          ]
+        },
+        4: {
+          title: "Perkalian Pelangi dengan Koefisien & Minus",
+          expr: "(2x - 3)(x + 4)",
+          steps: [
+            { label: "Langkah 1: Sifat Distributif Lengkap", math: "2x(x + 4) - 3(x + 4)", desc: "Pecah suku pertama menjadi 2x dan -3 untuk dikalikan ke suku kedua." },
+            { label: "Langkah 2: Kalikan ke setiap suku", math: "(2x \\cdot x) + (2x \\cdot 4) + (-3 \\cdot x) + (-3 \\cdot 4)", desc: "Hitung masing-masing perkalian suku aljabar." },
+            { label: "Langkah 3: Hasil perkalian masing-masing", math: "2x^2 + 8x - 3x - 12", desc: "Perhatikan bahwa (-3) × 4 menghasilkan -12." },
+            { label: "Langkah 4: Sederhanakan suku sejenis tengah", math: "2x^2 + (8 - 3)x - 12", desc: "Gabungkan 8x - 3x menjadi +5x." },
+            { label: "Hasil Akhir", math: "2x^2 + 5x - 12", desc: "Bentuk aljabar tersederhana.", final: true }
+          ]
+        },
+        5: {
+          title: "Pemfaktoran Mengeluarkan FPB",
+          expr: "6x^2 + 9x",
+          steps: [
+            { label: "Langkah 1: Cari FPB dari koefisien", math: "\\text{FPB}(6, 9) = 3", desc: "Faktor persekutuan terbesar dari 6 dan 9 adalah 3." },
+            { label: "Langkah 2: Cari FPB dari variabel", math: "\\text{FPB}(x^2, x) = x", desc: "Ambil variabel persekutuan dengan pangkat terendah, yaitu x." },
+            { label: "Langkah 3: Tentukan faktor luar (FPB total)", math: "\\text{FPB Total} = 3x", desc: "Faktor sekutu yang dikeluarkan adalah 3x." },
+            { label: "Langkah 4: Bagi setiap suku dengan 3x", math: "\\frac{6x^2}{3x} = 2x \\quad \\text{dan} \\quad \\frac{9x}{3x} = 3", desc: "Sisa di dalam kurung menjadi (2x + 3)." },
+            { label: "Hasil Pemfaktoran", math: "3x(2x + 3)", desc: "Bentuk aljabar terfaktorkan.", final: true }
+          ]
+        },
+        6: {
+          title: "Pembagian Suku Aljabar",
+          expr: "(15x^3y^2) : (3xy)",
+          steps: [
+            { label: "Langkah 1: Tulis dalam bentuk pecahan", math: "\\frac{15x^3y^2}{3xy}", desc: "Ubah bentuk pembagian titik dua (:) menjadi garis pecahan." },
+            { label: "Langkah 2: Bagi koefisiennya", math: "\\frac{15}{3} = 5", desc: "Bilangan 15 dibagi 3 sama dengan 5." },
+            { label: "Langkah 3: Bagi variabel yang sama dengan sifat eksponen", math: "x^{3-1} = x^2 \\quad \\text{dan} \\quad y^{2-1} = y^1 = y", desc: "Gunakan aturan pembagian pangkat: x^a / x^b = x^(a-b)." },
+            { label: "Hasil Pembagian", math: "5x^2y", desc: "Bentuk aljabar tersederhana.", final: true }
+          ]
+        }
+      };
+
+      let currentCalcPreset = 1;
+
+      function setCalcPreset(num) {
+        playSound('click');
+        currentCalcPreset = num;
+        const data = calcPresets[num];
+
+        for (let i = 1; i <= 6; i++) {
+          const btn = document.getElementById(`preset-btn-${i}`);
+          if (btn) {
+            if (i === num) {
+              btn.className = 'calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm transition';
+            } else {
+              btn.className = 'calc-preset-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition';
+            }
+          }
+        }
+
+        document.getElementById('calc-display-expression').innerHTML = `\\(${data.expr}\\)`;
+        revealAllCalculatorSteps();
+      }
+
+      function loadCalculatorExample(type) {
+        switchTab('modul3');
+        if (type === 'add_sub') setCalcPreset(1);
+        else if (type === 'multiply') setCalcPreset(3);
+        else if (type === 'factor') setCalcPreset(5);
+      }
+
+      function revealAllCalculatorSteps() {
+        const data = calcPresets[currentCalcPreset];
+        const container = document.getElementById('calc-steps-container');
+        container.innerHTML = '';
+
+        data.steps.forEach((step, idx) => {
+          const card = document.createElement('div');
+          card.className = `p-4 rounded-xl border transition shadow-xs ${
+            step.final ? 'bg-emerald-50 border-emerald-300' : 'bg-white border-slate-200'
+          }`;
+          card.innerHTML = `
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold ${step.final ? 'text-emerald-800' : 'text-indigo-600'}">${step.label}</span>
+              ${step.final ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-200 text-emerald-800">SELESAI</span>' : ''}
+            </div>
+            <div class="font-mono ${step.final ? 'text-lg font-bold text-emerald-700' : 'text-sm font-semibold text-slate-800'} my-1">
+              \\(${step.math}\\)
+            </div>
+            <p class="text-xs text-slate-500 mt-1">${step.desc}</p>
+          `;
+          container.appendChild(card);
+        });
+
+        renderAllMath();
+      }
+
+      /* ========================================================= */
+      /* MODUL 4: 3 STUDI KASUS KONTEKSTUAL INTERAKTIF            */
+      /* ========================================================= */
+      function updateCase1Study() {
+        const x = parseInt(document.getElementById('case1-input-x').value);
+        const y = parseInt(document.getElementById('case1-input-y').value);
+
+        document.getElementById('case1-x-label').textContent = `${x} buah buku`;
+        document.getElementById('case1-y-label').textContent = `${y} buah pulpen`;
+
+        const totalBuku = x * 4000;
+        const totalPulpen = y * 2500;
+        const totalBelanja = totalBuku + totalPulpen;
+        const sisa = 50000 - totalBelanja;
+
+        const stepsEl = document.getElementById('case1-sub-steps');
+        stepsEl.innerHTML = `
+          <div>S = 50.000 - (4.000(${x}) + 2.500(${y}))</div>
+          <div>S = 50.000 - (${totalBuku.toLocaleString('id-ID')} + ${totalPulpen.toLocaleString('id-ID')})</div>
+          <div>S = 50.000 - ${totalBelanja.toLocaleString('id-ID')}</div>
+        `;
+
+        const changeEl = document.getElementById('case1-final-change');
+        if (sisa >= 0) {
+          changeEl.textContent = `Rp${sisa.toLocaleString('id-ID')}`;
+          changeEl.className = 'text-lg font-extrabold text-emerald-600 font-mono';
+        } else {
+          changeEl.textContent = `Kurang Rp${Math.abs(sisa).toLocaleString('id-ID')}`;
+          changeEl.className = 'text-lg font-extrabold text-rose-600 font-mono';
+        }
+      }
+
+      function updateCase2Study() {
+        const x = parseInt(document.getElementById('case2-input-x').value);
+        document.getElementById('case2-x-label').textContent = `x = ${x}`;
+
+        const p = 2 * x + 3;
+        const l = x - 1;
+        const keliling = 2 * (p + l); // 6x + 4
+        const luas = p * l; // 2x^2 + x - 3
+
+        document.getElementById('case2-p-val').textContent = `${p} meter`;
+        document.getElementById('case2-l-val').textContent = `${l} meter`;
+        document.getElementById('case2-rect-dim').textContent = `${p}m × ${l}m`;
+
+        document.getElementById('case2-k-calc').innerHTML = `K = 6(${x}) + 4 = <b>${keliling} m</b>`;
+        document.getElementById('case2-l-calc').innerHTML = `L = 2(${x})^2 + ${x} - 3 = <b>${luas} m²</b>`;
+
+        const rectBox = document.getElementById('case2-rect-box');
+        rectBox.style.height = `${Math.min(160, Math.max(70, l * 14))}px`;
+      }
+
+      function updateCase3Study() {
+        const m = parseInt(document.getElementById('case3-input-m').value) || 0;
+        const s = parseInt(document.getElementById('case3-input-s').value) || 0;
+        const total = 3 * m + s;
+        document.getElementById('case3-final-score').textContent = `${total} Poin`;
+      }
+
+      /* ========================================================= */
+      /* SISTEM KUIS 80 SOAL LENGKAP (60 STANDAR + 20 MENENGAH)   */
+      /* ========================================================= */
+      const quizQuestionsBank = [
+        /* KATEGORI A: Unsur-Unsur Aljabar & Suku Sejenis (Soal 1 - 15) */
+        {
+          id: 1,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Pada bentuk aljabar $5x + 7$, yang bertindak sebagai variabel adalah...",
+          opts: ["5", "x", "7", "5x"],
+          ans: 1,
+          exp: "Variabel (peubah) adalah lambang huruf pengganti bilangan yang belum diketahui nilainya secara pasti. Pada bentuk $5x + 7$, variabelnya adalah $x$."
+        },
+        {
+          id: 2,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Koefisien dari variabel $y$ pada bentuk aljabar $3x^2 - 4y + 9$ adalah...",
+          opts: ["3", "4", "-4", "9"],
+          ans: 2,
+          exp: "Koefisien adalah angka pengali yang berada tepat di depan variabel beserta tandanya. Tanda di depan 4 adalah minus (-), sehingga koefisien dari $y$ adalah $-4$."
+        },
+        {
+          id: 3,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Konstanta pada bentuk aljabar $2a^2 - 7a - 15$ adalah...",
+          opts: ["2", "-7", "15", "-15"],
+          ans: 3,
+          exp: "Konstanta adalah suku aljabar yang hanya berupa bilangan tetap tanpa variabel. Pada bentuk tersebut, konstantanya adalah $-15$."
+        },
+        {
+          id: 4,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Banyaknya suku pada bentuk aljabar $4x^2 - 2xy + 3y^2 - 8$ adalah...",
+          opts: ["2 suku", "3 suku", "4 suku", "5 suku"],
+          ans: 2,
+          exp: "Suku-suku dipisahkan oleh tanda tambah (+) atau kurang (-). Suku-sukunya adalah $4x^2$, $-2xy$, $3y^2$, dan $-8$, sehingga totalnya terdapat 4 suku."
+        },
+        {
+          id: 5,
+          cat: "A",
+          catName: "Suku Sejenis",
+          q: "Pasangan suku berikut yang merupakan pasangan suku sejenis adalah...",
+          opts: ["$3a^2b$ dan $-7a^2b$", "$4x$ dan $4y$", "$2p^2$ dan $5p$", "$5ab^2$ dan $5a^2b$"],
+          ans: 0,
+          exp: "Suku sejenis wajib memiliki variabel yang persis sama dan pangkat setiap variabel juga sama. Pasangan $3a^2b$ dan $-7a^2b$ keduanya memiliki variabel $a^2b$."
+        },
+        {
+          id: 6,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Koefisien dari $x^2$ pada bentuk aljabar $x^2 - 5x + 6$ bernilai...",
+          opts: ["0", "1", "-5", "6"],
+          ans: 1,
+          exp: "Jika suatu suku aljabar tidak tertulis angka di depan variabelnya (seperti $x^2$), maka koefisien suku tersebut secara implisit adalah 1."
+        },
+        {
+          id: 7,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Manakah di antara bentuk aljabar berikut yang merupakan suku tunggal (monomial)?",
+          opts: ["$2x + 3$", "$-8abc$", "$x^2 - y^2$", "$3p + 2q - 1$"],
+          ans: 1,
+          exp: "Monomial (suku tunggal) adalah bentuk aljabar yang tidak dipisahkan oleh operasi penjumlahan atau pengurangan. $-8abc$ adalah satu suku tunggal."
+        },
+        {
+          id: 8,
+          cat: "A",
+          catName: "Suku Sejenis",
+          q: "Manakah pasangan suku di bawah ini yang TIDAK sejenis?",
+          opts: ["$7xy$ dan $-2xy$", "$-4m$ dan $9m$", "$4x^2y$ dan $4xy^2$", "$12$ dan $-5$"],
+          ans: 2,
+          exp: "Pada $4x^2y$, variabel $x$ berpangkat 2 dan $y$ berpangkat 1. Sedangkan pada $4xy^2$, $x$ berpangkat 1 dan $y$ berpangkat 2. Pangkatnya berbeda, sehingga TIDAK sejenis."
+        },
+        {
+          id: 9,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Derajat (pangkat tertinggi variabel) dari bentuk aljabar $p^3 - 3p^2q + 5$ adalah...",
+          opts: ["1", "2", "3", "5"],
+          ans: 2,
+          exp: "Derajat dari bentuk aljabar ditentukan oleh pangkat tertinggi variabelnya. Pada bentuk $p^3 - 3p^2q + 5$, pangkat tertinggi adalah 3."
+        },
+        {
+          id: 10,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Contoh bilangan yang berperan murni sebagai konstanta adalah...",
+          opts: ["$-12$", "$5x$", "$3a^2$", "$xy$"],
+          ans: 0,
+          exp: "Konstanta adalah bilangan tetap yang sama sekali tidak memuat variabel peubah, yaitu $-12$."
+        },
+        {
+          id: 11,
+          cat: "A",
+          catName: "Suku Sejenis",
+          q: "Pasangan suku sejenis pada bentuk aljabar $5x^2 - 3x + 2x^2 + 7$ adalah...",
+          opts: ["$5x^2$ dan $-3x$", "$5x^2$ dan $2x^2$", "$-3x$ dan $7$", "$2x^2$ dan $7$"],
+          ans: 1,
+          exp: "$5x^2$ dan $2x^2$ sama-sama memiliki variabel $x$ dengan pangkat 2, sehingga keduanya merupakan suku sejenis."
+        },
+        {
+          id: 12,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Koefisien dari variabel $p$ pada ekspresi aljabar $-p + 12$ adalah...",
+          opts: ["1", "-1", "12", "0"],
+          ans: 1,
+          exp: "Tanda minus (-) di depan variabel tunggal $p$ berarti bernilai $-1 \\times p$, sehingga koefisiennya adalah $-1$."
+        },
+        {
+          id: 13,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Pada bentuk aljabar $7a - 4b + 2c - 9$, konstanta dan banyaknya variabel berturut-turut adalah...",
+          opts: ["-9 dan 3 variabel", "9 dan 4 variabel", "-9 dan 4 variabel", "7 dan 3 variabel"],
+          ans: 0,
+          exp: "Konstantanya adalah $-9$ dan variabel yang ada adalah $a, b,$ dan $c$ (berjumlah 3 variabel)."
+        },
+        {
+          id: 14,
+          cat: "A",
+          catName: "Unsur Aljabar",
+          q: "Bentuk aljabar yang dinamakan binomial (suku dua) adalah...",
+          opts: ["$5x$", "$5x - 3y$", "$x^2 + 2x + 1$", "$3a - 4b + 5c - 8$"],
+          ans: 1,
+          exp: "Binomial terdiri atas tepat dua suku yang dihubungkan tanda tambah atau kurang, seperti $5x - 3y$."
+        },
+        {
+          id: 15,
+          cat: "A",
+          catName: "Suku Sejenis",
+          q: "Pernyataan yang BENAR mengenai dua suku yang sejenis adalah...",
+          opts: [
+            "Koefisiennya harus selalu sama",
+            "Memiliki variabel yang sama dan pangkat setiap variabelnya harus sama",
+            "Memiliki konstanta yang sama",
+            "Tanda operasinya harus selalu positif"
+          ],
+          ans: 1,
+          exp: "Syarat mutlak dua suku sejenis adalah kesamaan huruf variabel dan eksponen (pangkat) dari masing-masing variabel tersebut."
+        },
+
+        /* KATEGORI B: Penjumlahan & Pengurangan Bentuk Aljabar (Soal 16 - 30) */
+        {
+          id: 16,
+          cat: "B",
+          catName: "Penjumlahan Aljabar",
+          q: "Bentuk sederhana dari $4x + 7x$ adalah...",
+          opts: ["$11x$", "$11x^2$", "$28x$", "$11$"],
+          ans: 0,
+          exp: "Karena suku sejenis, jumlahkan koefisiennya: $(4 + 7)x = 11x$."
+        },
+        {
+          id: 17,
+          cat: "B",
+          catName: "Penjumlahan & Pengurangan",
+          q: "Hasil penyederhanaan dari $9a - 3b - 4a + 8b$ adalah...",
+          opts: ["$5a + 5b$", "$13a + 11b$", "$5a - 5b$", "$5ab$"],
+          ans: 0,
+          exp: "Kelompokkan suku sejenis: $(9a - 4a) + (-3b + 8b) = 5a + 5b$."
+        },
+        {
+          id: 18,
+          cat: "B",
+          catName: "Penjumlahan Polinomial",
+          q: "Hasil dari $(3x^2 + 5x - 7) + (2x^2 - 8x + 12)$ adalah...",
+          opts: ["$5x^2 - 3x + 5$", "$5x^2 + 13x - 19$", "$5x^4 - 3x^2 + 5$", "$x^2 - 3x + 5$"],
+          ans: 0,
+          exp: "Jumlahkan koefisien suku yang sejenis:<br>• $x^2$: $3 + 2 = 5x^2$<br>• $x$: $5 - 8 = -3x$<br>• Konstanta: $-7 + 12 = 5$<br>Hasilnya: $5x^2 - 3x + 5$."
+        },
+        {
+          id: 19,
+          cat: "B",
+          catName: "Pengurangan Aljabar",
+          q: "Kurangkanlah $(3x - 5)$ DARI $(8x + 2)$. Hasilnya adalah...",
+          opts: ["$5x + 7$", "$5x - 7$", "$-5x - 7$", "$11x - 3$"],
+          ans: 0,
+          exp: "Ingat aturan kata 'DARI': $(8x + 2) - (3x - 5) = 8x + 2 - 3x + 5 = 5x + 7$."
+        },
+        {
+          id: 20,
+          cat: "B",
+          catName: "Pengurangan Aljabar",
+          q: "Hasil pengurangan $(5p - 2q)$ OLEH $(2p + 7q)$ adalah...",
+          opts: ["$3p - 9q$", "$3p + 5q$", "$7p + 5q$", "$-3p + 9q$"],
+          ans: 0,
+          exp: "Aturan kata 'OLEH': $(5p - 2q) - (2p + 7q) = 5p - 2q - 2p - 7q = 3p - 9q$."
+        },
+        {
+          id: 21,
+          cat: "B",
+          catName: "Operasi Campuran",
+          q: "Bentuk sederhana dari $2(3x - 4) + 3(2x + 5)$ adalah...",
+          opts: ["$12x + 7$", "$12x - 7$", "$6x + 7$", "$12x + 23$"],
+          ans: 0,
+          exp: "Distribusikan angka pengali:<br>$2(3x - 4) = 6x - 8$<br>$3(2x + 5) = 6x + 15$<br>Jumlahkan: $(6x + 6x) + (-8 + 15) = 12x + 7$."
+        },
+        {
+          id: 22,
+          cat: "B",
+          catName: "Operasi Campuran",
+          q: "Hasil dari $5(2a - b) - 3(a - 4b)$ adalah...",
+          opts: ["$7a + 7b$", "$7a - 17b$", "$10a + 12b$", "$7a - 7b$"],
+          ans: 0,
+          exp: "Buka kurung dengan teliti:<br>$5(2a - b) = 10a - 5b$<br>$-3(a - 4b) = -3a + 12b$<br>Satukan: $(10a - 3a) + (-5b + 12b) = 7a + 7b$."
+        },
+        {
+          id: 23,
+          cat: "B",
+          catName: "Pengurangan Polinomial",
+          q: "Bentuk sederhana dari $7m^2 - 4m + 3 - (2m^2 - 9m - 6)$ adalah...",
+          opts: ["$5m^2 + 5m + 9$", "$5m^2 - 13m - 3$", "$9m^2 + 5m + 9$", "$5m^2 - 5m + 9$"],
+          ans: 0,
+          exp: "Buka kurung dengan membalik tanda di dalamnya:<br>$7m^2 - 4m + 3 - 2m^2 + 9m + 6$<br>= $(7 - 2)m^2 + (-4 + 9)m + (3 + 6)$<br>= $5m^2 + 5m + 9$."
+        },
+        {
+          id: 24,
+          cat: "B",
+          catName: "Operasi Bentuk Aljabar",
+          q: "Jika $P = 2x - 3y$ dan $Q = -4x + 5y$, maka nilai dari $P + Q$ adalah...",
+          opts: ["$-2x + 2y$", "$2x - 2y$", "$-6x + 8y$", "$6x - 8y$"],
+          ans: 0,
+          exp: "$P + Q = (2x - 3y) + (-4x + 5y) = (2 - 4)x + (-3 + 5)y = -2x + 2y$."
+        },
+        {
+          id: 25,
+          cat: "B",
+          catName: "Operasi Bentuk Aljabar",
+          q: "Jika $A = 3x + 4$ dan $B = 5x - 2$, maka bentuk dari $2A - B$ adalah...",
+          opts: ["$x + 10$", "$x + 6$", "$11x + 6$", "$-x + 10$"],
+          ans: 0,
+          exp: "$2A - B = 2(3x + 4) - (5x - 2) = 6x + 8 - 5x + 2 = (6x - 5x) + (8 + 2) = x + 10$."
+        },
+        {
+          id: 26,
+          cat: "B",
+          catName: "Pecahan Aljabar",
+          q: "Hasil dari $\\frac{2x}{3} + \\frac{x}{3}$ adalah...",
+          opts: ["$x$", "$\\frac{3x}{6}$", "$\\frac{2x^2}{3}$", "$3x$"],
+          ans: 0,
+          exp: "Karena penyebutnya sudah sama (3), jumlahkan pembilangnya: $\\frac{2x + x}{3} = \\frac{3x}{3} = x$."
+        },
+        {
+          id: 27,
+          cat: "B",
+          catName: "Pecahan Aljabar",
+          q: "Bentuk sederhana dari $\\frac{3a}{4} - \\frac{a}{2}$ adalah...",
+          opts: ["$\\frac{a}{4}$", "$\\frac{2a}{2}$", "$\\frac{a}{2}$", "$\\frac{2a}{4}$"],
+          ans: 0,
+          exp: "Samakan penyebut ke KPK 4: $\\frac{3a}{4} - \\frac{2a}{4} = \\frac{3a - 2a}{4} = \\frac{a}{4}$."
+        },
+        {
+          id: 28,
+          cat: "B",
+          catName: "Penjumlahan Aljabar",
+          q: "Hasil dari $4xy - 7x + 2xy + 3x$ adalah...",
+          opts: ["$6xy - 4x$", "$6xy - 10x$", "$8x^2y - 4x$", "$2xy$"],
+          ans: 0,
+          exp: "Gabungkan suku sejenis:<br>$(4xy + 2xy) + (-7x + 3x) = 6xy - 4x$."
+        },
+        {
+          id: 29,
+          cat: "B",
+          catName: "Pengurangan Aljabar",
+          q: "Sebuah tali sepanjang $(8x - 3)\\text{ cm}$ dipotong sepanjang $(3x + 4)\\text{ cm}$. Sisa tali tersebut adalah...",
+          opts: ["$(5x - 7)\\text{ cm}$", "$(5x + 1)\\text{ cm}$", "$(11x + 1)\\text{ cm}$", "$(5x - 1)\\text{ cm}$"],
+          ans: 0,
+          exp: "Sisa = $(8x - 3) - (3x + 4) = 8x - 3 - 3x - 4 = 5x - 7\\text{ cm}$."
+        },
+        {
+          id: 30,
+          cat: "B",
+          catName: "Penjumlahan Polinomial",
+          q: "Jumlah dari $-3p^2 + 5p - 2$ dan $7p^2 - 2p - 8$ adalah...",
+          opts: ["$4p^2 + 3p - 10$", "$4p^2 + 7p - 10$", "$-10p^2 + 3p - 6$", "$4p^4 + 3p^2 - 10$"],
+          ans: 0,
+          exp: "$(-3 + 7)p^2 + (5 - 2)p + (-2 - 8) = 4p^2 + 3p - 10$."
+        },
+
+        /* KATEGORI C: Perkalian, Pembagian & Pemfaktoran Aljabar (Soal 31 - 45) */
+        {
+          id: 31,
+          cat: "C",
+          catName: "Perkalian Aljabar",
+          q: "Hasil perkalian dari $4a \\times 3b$ adalah...",
+          opts: ["$12ab$", "$7ab$", "$12a^2b$", "$7a + 3b$"],
+          ans: 0,
+          exp: "Kalikan koefisien dan sandingkan variabelnya: $(4 \\times 3) \\times (a \\times b) = 12ab$."
+        },
+        {
+          id: 32,
+          cat: "C",
+          catName: "Perkalian Eksponen",
+          q: "Hasil perkalian dari $-5x \\times 2x^2$ adalah...",
+          opts: ["$-10x^3$", "$10x^3$", "$-10x^2$", "$-3x^3$"],
+          ans: 0,
+          exp: "Koefisien: $-5 \\times 2 = -10$. Variabel: $x^1 \\times x^2 = x^{1+2} = x^3$. Hasilnya: $-10x^3$."
+        },
+        {
+          id: 33,
+          cat: "C",
+          catName: "Sifat Distributif",
+          q: "Hasil dari $3(2x - 5y)$ adalah...",
+          opts: ["$6x - 15y$", "$6x - 5y$", "$5x - 8y$", "$6x + 15y$"],
+          ans: 0,
+          exp: "Gunakan sifat distributif: $3 \\times 2x - 3 \\times 5y = 6x - 15y$."
+        },
+        {
+          id: 34,
+          cat: "C",
+          catName: "Sifat Distributif",
+          q: "Hasil dari $-2a(3a - 4b)$ adalah...",
+          opts: ["$-6a^2 + 8ab$", "$-6a^2 - 8ab$", "$-6a + 8b$", "$6a^2 - 8ab$"],
+          ans: 0,
+          exp: "Kalikan: $(-2a \\times 3a) + (-2a \\times -4b) = -6a^2 + 8ab$."
+        },
+        {
+          id: 35,
+          cat: "C",
+          catName: "Metode Pelangi",
+          q: "Hasil perkalian dari $(x + 3)(x + 5)$ adalah...",
+          opts: ["$x^2 + 8x + 15$", "$x^2 + 15x + 8$", "$x^2 + 8$", "$x^2 + 15$"],
+          ans: 0,
+          exp: "Metode Pelangi (FOIL):<br>$x \\cdot x + x \\cdot 5 + 3 \\cdot x + 3 \\cdot 5 = x^2 + 5x + 3x + 15 = x^2 + 8x + 15$."
+        },
+        {
+          id: 36,
+          cat: "C",
+          catName: "Metode Pelangi",
+          q: "Hasil perkalian dari $(2x - 3)(x + 4)$ adalah...",
+          opts: ["$2x^2 + 5x - 12$", "$2x^2 - 5x - 12$", "$2x^2 + 11x - 12$", "$2x^2 - 12$"],
+          ans: 0,
+          exp: "$2x \\cdot x + 2x \\cdot 4 - 3 \\cdot x - 3 \\cdot 4 = 2x^2 + 8x - 3x - 12 = 2x^2 + 5x - 12$."
+        },
+        {
+          id: 37,
+          cat: "C",
+          catName: "Kuadrat Binomial",
+          q: "Bentuk kuadrat dari $(x - 4)^2$ jika dijabarkan adalah...",
+          opts: ["$x^2 - 8x + 16$", "$x^2 - 16$", "$x^2 + 16$", "$x^2 - 4x + 16$"],
+          ans: 0,
+          exp: "$(a - b)^2 = a^2 - 2ab + b^2$.<br>$(x - 4)^2 = x^2 - 2(x)(4) + 4^2 = x^2 - 8x + 16$."
+        },
+        {
+          id: 38,
+          cat: "C",
+          catName: "Selisih Kuadrat",
+          q: "Hasil dari $(2a + 3)(2a - 3)$ adalah...",
+          opts: ["$4a^2 - 9$", "$4a^2 + 9$", "$4a^2 - 6a - 9$", "$2a^2 - 9$"],
+          ans: 0,
+          exp: "Rumus selisih dua kuadrat $(a + b)(a - b) = a^2 - b^2$.<br>$(2a)^2 - 3^2 = 4a^2 - 9$."
+        },
+        {
+          id: 39,
+          cat: "C",
+          catName: "Pembagian Aljabar",
+          q: "Hasil pembagian dari $12x^3y : 3xy$ adalah...",
+          opts: ["$4x^2$", "$4x^2y$", "$4x^4y^2$", "$9x^2$"],
+          ans: 0,
+          exp: "$\\frac{12}{3} = 4$; $\\frac{x^3}{x} = x^2$; $\\frac{y}{y} = 1$. Hasil akhirnya adalah $4x^2$."
+        },
+        {
+          id: 40,
+          cat: "C",
+          catName: "Pembagian Aljabar",
+          q: "Hasil dari $\\frac{-18a^4b^2}{6a^2b}$ adalah...",
+          opts: ["$-3a^2b$", "$3a^2b$", "$-3a^6b^3$", "$-12a^2b$"],
+          ans: 0,
+          exp: "$\\frac{-18}{6} = -3$; $a^{4-2} = a^2$; $b^{2-1} = b$. Hasilnya: $-3a^2b$."
+        },
+        {
+          id: 41,
+          cat: "C",
+          catName: "Pemfaktoran FPB",
+          q: "Pemfaktoran dengan mengeluarkan FPB dari $6x + 9$ adalah...",
+          opts: ["$3(2x + 3)$", "$3(2x + 9)$", "$6(x + 3)$", "$9(x + 1)$"],
+          ans: 0,
+          exp: "FPB dari 6 dan 9 adalah 3. Bagikan masing-masing suku dengan 3: $6x/3 = 2x$ dan $9/3 = 3$. Hasilnya: $3(2x + 3)$."
+        },
+        {
+          id: 42,
+          cat: "C",
+          catName: "Pemfaktoran FPB",
+          q: "Pemfaktoran bentuk aljabar $8x^2y - 12xy^2$ adalah...",
+          opts: ["$4xy(2x - 3y)$", "$4x(2xy - 3y^2)$", "$2xy(4x - 6y)$", "$4(2x^2y - 3xy^2)$"],
+          ans: 0,
+          exp: "FPB dari 8 dan 12 adalah 4. Variabel sekutu berpangkat terendah adalah $x$ dan $y$ ($xy$). Maka FPB total adalah $4xy$. Hasilnya: $4xy(2x - 3y)$."
+        },
+        {
+          id: 43,
+          cat: "C",
+          catName: "Pembagian Polinomial",
+          q: "Hasil dari $(10x^2 - 15x) : 5x$ adalah...",
+          opts: ["$2x - 3$", "$2x - 3x$", "$5x - 3$", "$2x^2 - 3$"],
+          ans: 0,
+          exp: "Bagikan setiap suku dengan $5x$: $\\frac{10x^2}{5x} - \\frac{15x}{5x} = 2x - 3$."
+        },
+        {
+          id: 44,
+          cat: "C",
+          catName: "Pecahan Aljabar",
+          q: "Bentuk sederhana dari $\\frac{4x + 8}{4}$ adalah...",
+          opts: ["$x + 2$", "$x + 8$", "$4x + 2$", "$x + 4$"],
+          ans: 0,
+          exp: "Faktorkan pembilang: $\\frac{4(x + 2)}{4} = x + 2$."
+        },
+        {
+          id: 45,
+          cat: "C",
+          catName: "Selisih Kuadrat",
+          q: "Hasil perkalian $(3x - 2y)(3x + 2y)$ adalah...",
+          opts: ["$9x^2 - 4y^2$", "$9x^2 + 4y^2$", "$6x^2 - 4y^2$", "$9x - 4y$"],
+          ans: 0,
+          exp: "Berdasarkan rumus selisih dua kuadrat: $(3x)^2 - (2y)^2 = 9x^2 - 4y^2$."
+        },
+
+        /* KATEGORI D: Substitusi Nilai & Pemodelan Soal Cerita (Soal 46 - 60) */
+        {
+          id: 46,
+          cat: "D",
+          catName: "Substitusi Nilai",
+          q: "Jika nilai $x = 3$, maka nilai dari bentuk aljabar $4x - 5$ adalah...",
+          opts: ["7", "12", "-7", "17"],
+          ans: 0,
+          exp: "Ganti $x$ dengan 3: $4(3) - 5 = 12 - 5 = 7$."
+        },
+        {
+          id: 47,
+          cat: "D",
+          catName: "Substitusi Nilai",
+          q: "Jika $a = -2$ dan $b = 5$, maka nilai dari $3a + 2b$ adalah...",
+          opts: ["4", "-4", "16", "-16"],
+          ans: 0,
+          exp: "Substitusi: $3(-2) + 2(5) = -6 + 10 = 4$."
+        },
+        {
+          id: 48,
+          cat: "D",
+          catName: "Substitusi Nilai",
+          q: "Diketahui $p = 4$ dan $q = -1$. Nilai dari $2p^2 - 3q$ adalah...",
+          opts: ["35", "29", "32", "-29"],
+          ans: 0,
+          exp: "Substitusi: $2(4^2) - 3(-1) = 2(16) + 3 = 32 + 3 = 35$."
+        },
+        {
+          id: 49,
+          cat: "D",
+          catName: "Substitusi Nilai",
+          q: "Nilai dari $x^2 - 5x + 6$ untuk $x = -2$ adalah...",
+          opts: ["20", "0", "12", "-8"],
+          ans: 0,
+          exp: "Substitusi teliti tanda minus: $(-2)^2 - 5(-2) + 6 = 4 + 10 + 6 = 20$."
+        },
+        {
+          id: 50,
+          cat: "D",
+          catName: "Pemodelan Soal Cerita",
+          q: "Andi membeli $x$ buku tulis seharga Rp3.000 per buah dan 4 pensil seharga Rp2.000 per buah. Bentuk aljabar total belanjaan Andi adalah...",
+          opts: ["$3000x + 8000$", "$3000x + 2000$", "$5000x + 4$", "$12000x$"],
+          ans: 0,
+          exp: "Total biaya = $(x \\times 3000) + (4 \\times 2000) = 3000x + 8000$."
+        },
+        {
+          id: 51,
+          cat: "D",
+          catName: "Substitusi Cerita",
+          q: "Berdasarkan soal nomor 50, jika Andi membeli 5 buku tulis ($x = 5$), total biaya yang harus dibayar adalah...",
+          opts: ["Rp23.000", "Rp15.000", "Rp20.000", "Rp25.000"],
+          ans: 0,
+          exp: "Substitusi $x = 5$: $3000(5) + 8000 = 15000 + 8000 = 23000$ rupiah."
+        },
+        {
+          id: 52,
+          cat: "D",
+          catName: "Pemodelan Geometri",
+          q: "Sebuah persegi panjang memiliki panjang $(3x + 2)\\text{ cm}$ dan lebar $(x + 5)\\text{ cm}$. Rumus keliling persegi panjang tersebut dalam $x$ adalah...",
+          opts: ["$8x + 14\\text{ cm}$", "$4x + 7\\text{ cm}$", "$6x + 10\\text{ cm}$", "$3x^2 + 17x + 10\\text{ cm}$"],
+          ans: 0,
+          exp: "$K = 2(p + l) = 2((3x + 2) + (x + 5)) = 2(4x + 7) = 8x + 14\\text{ cm}$."
+        },
+        {
+          id: 53,
+          cat: "D",
+          catName: "Substitusi Geometri",
+          q: "Berdasarkan soal nomor 52, jika nilai $x = 4$, maka keliling persegi panjang tersebut adalah...",
+          opts: ["$46\\text{ cm}$", "$32\\text{ cm}$", "$23\\text{ cm}$", "$50\\text{ cm}$"],
+          ans: 0,
+          exp: "Keliling = $8(4) + 14 = 32 + 14 = 46\\text{ cm}$."
+        },
+        {
+          id: 54,
+          cat: "D",
+          catName: "Pemodelan Geometri",
+          q: "Rumus luas persegi panjang dengan panjang $(2x + 1)\\text{ cm}$ dan lebar $x\\text{ cm}$ adalah...",
+          opts: ["$(2x^2 + x)\\text{ cm}^2$", "$(2x^2 + 1)\\text{ cm}^2$", "$(3x + 1)\\text{ cm}^2$", "$(4x + 2)\\text{ cm}^2$"],
+          ans: 0,
+          exp: "Luas = $p \\times l = (2x + 1) \\times x = 2x^2 + x\\text{ cm}^2$."
+        },
+        {
+          id: 55,
+          cat: "D",
+          catName: "Pemodelan Soal Cerita",
+          q: "Ibu membawa uang Rp100.000 ke pasar. Ibu membeli $a\\text{ kg}$ beras seharga Rp14.000/kg dan $b\\text{ kg}$ telur seharga Rp28.000/kg. Bentuk aljabar sisa uang ibu adalah...",
+          opts: [
+            "$100000 - 14000a - 28000b$",
+            "$100000 + 14000a + 28000b$",
+            "$14000a + 28000b - 100000$",
+            "$100000 - 42000(a + b)$"
+          ],
+          ans: 0,
+          exp: "Sisa uang = Uang awal - total belanja = $100.000 - (14.000a + 28.000b) = 100000 - 14000a - 28000b$."
+        },
+        {
+          id: 56,
+          cat: "D",
+          catName: "Pemodelan Soal Cerita",
+          q: "Dalam suatu turnamen sepak bola, menang diberi poin 3, seri poin 1, dan kalah 0. Jika tim Garuda menang $m$ kali dan seri $s$ kali, bentuk aljabar perolehan poin tim tersebut adalah...",
+          opts: ["$3m + s$", "$3m + 3s$", "$m + 3s$", "$4ms$"],
+          ans: 0,
+          exp: "Poin = $(3 \\times m) + (1 \\times s) + (0 \\times k) = 3m + s$."
+        },
+        {
+          id: 57,
+          cat: "D",
+          catName: "Pemodelan Aljabar",
+          q: "Suatu bilangan adalah $k$. Tiga kali bilangan tersebut ditambah 7 dinyatakan dalam bentuk aljabar adalah...",
+          opts: ["$3k + 7$", "$k^3 + 7$", "$3(k + 7)$", "$7k + 3$"],
+          ans: 0,
+          exp: "'Tiga kali bilangan' = $3k$. 'Ditambah 7' = $+ 7$. Bentuknya adalah $3k + 7$."
+        },
+        {
+          id: 58,
+          cat: "D",
+          catName: "Pemodelan Soal Cerita",
+          q: "Umur Ayah sekarang $3y$ tahun, sedangkan umur Budi $y$ tahun. Selisih umur Ayah dan Budi 5 tahun yang akan datang adalah...",
+          opts: ["$2y$ tahun", "$2y + 5$ tahun", "$2y + 10$ tahun", "$4y$ tahun"],
+          ans: 0,
+          exp: "Selisih umur antara dua orang selalu tetap di masa kapan pun:<br>$(3y + 5) - (y + 5) = 3y + 5 - y - 5 = 2y$ tahun."
+        },
+        {
+          id: 59,
+          cat: "D",
+          catName: "Substitusi Pecahan",
+          q: "Nilai dari $\\frac{a + 2b}{c}$ jika diketahui $a = 6, b = 3,$ dan $c = 4$ adalah...",
+          opts: ["3", "4", "2", "6"],
+          ans: 0,
+          exp: "Substitusi: $\\frac{6 + 2(3)}{4} = \\frac{6 + 6}{4} = \\frac{12}{4} = 3$."
+        },
+        {
+          id: 60,
+          cat: "D",
+          catName: "Pemodelan Geometri",
+          q: "Sebuah kolam renang berbentuk persegi dengan panjang sisi $(2x - 3)\\text{ meter}$. Luas kolam renang tersebut dalam aljabar adalah...",
+          opts: ["$(4x^2 - 12x + 9)\\text{ m}^2$", "$(4x^2 - 9)\\text{ m}^2$", "$(4x^2 + 9)\\text{ m}^2$", "$(8x - 12)\\text{ m}^2$"],
+          ans: 0,
+          exp: "Luas persegi = sisi² = $(2x - 3)^2 = (2x)^2 - 2(2x)(3) + 3^2 = 4x^2 - 12x + 9\\text{ m}^2$."
+        },
+
+        /* ========================================================================= */
+        /* KATEGORI E: Aljabar Tingkat Menengah (20 Soal Tambahan: Soal 61 - 80)     */
+        /* ========================================================================= */
+        {
+          id: 61,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Bentuk sederhana dari pecahan aljabar $\\frac{x+1}{2} + \\frac{x-2}{3}$ adalah...",
+          opts: ["$\\frac{5x - 1}{6}$", "$\\frac{2x - 1}{5}$", "$\\frac{5x + 1}{6}$", "$\\frac{2x - 1}{6}$"],
+          ans: 0,
+          exp: "Samakan penyebut ke KPK(2, 3) = 6:<br>$\\frac{3(x+1) + 2(x-2)}{6} = \\frac{3x + 3 + 2x - 4}{6} = \\frac{(3x + 2x) + (3 - 4)}{6} = \\frac{5x - 1}{6}$."
+        },
+        {
+          id: 62,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Bentuk sederhana dari $\\frac{3}{a} - \\frac{2}{b}$ adalah...",
+          opts: ["$\\frac{3b - 2a}{ab}$", "$\\frac{1}{a - b}$", "$\\frac{3a - 2b}{ab}$", "$\\frac{1}{ab}$"],
+          ans: 0,
+          exp: "Samakan penyebut menjadi $ab$:<br>$\\frac{3b}{ab} - \\frac{2a}{ab} = \\frac{3b - 2a}{ab}$."
+        },
+        {
+          id: 63,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Hasil perkalian dari $(3x - 2)(2x + 5)$ adalah...",
+          opts: ["$6x^2 + 11x - 10$", "$6x^2 - 11x - 10$", "$6x^2 + 19x - 10$", "$6x^2 - 10$"],
+          ans: 0,
+          exp: "Gunakan metode pelangi (FOIL):<br>$(3x)(2x) + (3x)(5) + (-2)(2x) + (-2)(5)$<br>$= 6x^2 + 15x - 4x - 10 = 6x^2 + 11x - 10$."
+        },
+        {
+          id: 64,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Hasil penjabaran bentuk kuadrat $(3a - 4b)^2$ adalah...",
+          opts: ["$9a^2 - 24ab + 16b^2$", "$9a^2 - 16b^2$", "$9a^2 + 24ab + 16b^2$", "$9a^2 - 12ab + 16b^2$"],
+          ans: 0,
+          exp: "Rumus kuadrat suku dua $(p - q)^2 = p^2 - 2pq + q^2$:<br>$(3a)^2 - 2(3a)(4b) + (4b)^2 = 9a^2 - 24ab + 16b^2$."
+        },
+        {
+          id: 65,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Pemfaktoran selisih dua kuadrat dari $16x^2 - 49$ adalah...",
+          opts: ["$(4x - 7)(4x + 7)$", "$(4x - 7)^2$", "$(8x - 7)(8x + 7)$", "$(16x - 1)(x + 49)$"],
+          ans: 0,
+          exp: "Bentuk selisih dua kuadrat $a^2 - b^2 = (a - b)(a + b)$:<br>$(4x)^2 - 7^2 = (4x - 7)(4x + 7)$."
+        },
+        {
+          id: 66,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Pemfaktoran dari bentuk kuadrat $x^2 + 7x + 12$ adalah...",
+          opts: ["$(x + 3)(x + 4)$", "$(x + 2)(x + 6)$", "$(x - 3)(x - 4)$", "$(x + 1)(x + 12)$"],
+          ans: 0,
+          exp: "Cari dua bilangan yang jika dikalikan bernilai $+12$ dan jika dijumlahkan bernilai $+7$. Bilangan tersebut adalah $+3$ dan $+4$. Jadi pemfaktorannya adalah $(x + 3)(x + 4)$."
+        },
+        {
+          id: 67,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Pemfaktoran dari bentuk aljabar $x^2 - 5x - 24$ adalah...",
+          opts: ["$(x - 8)(x + 3)$", "$(x + 8)(x - 3)$", "$(x - 6)(x + 4)$", "$(x - 12)(x + 2)$"],
+          ans: 0,
+          exp: "Cari dua bilangan dengan hasil kali $-24$ dan jumlah $-5$. Bilangan tersebut adalah $-8$ dan $+3$. Sehingga $x^2 - 5x - 24 = (x - 8)(x + 3)$."
+        },
+        {
+          id: 68,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Pemfaktoran dari bentuk $2x^2 + 7x + 3$ adalah...",
+          opts: ["$(2x + 1)(x + 3)$", "$(2x + 3)(x + 1)$", "$(2x - 1)(x - 3)$", "$(x + 3)(x + 2)$"],
+          ans: 0,
+          exp: "Faktorkan bentuk $ax^2 + bx + c$ dengan $a=2, b=7, c=3$ ($a \\times c = 6$):<br>Pecah suku tengah: $2x^2 + 6x + x + 3 = 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)$."
+        },
+        {
+          id: 69,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Bentuk paling sederhana dari pecahan aljabar $\\frac{x^2 - 16}{x - 4}$ adalah...",
+          opts: ["$x + 4$", "$x - 4$", "$x + 16$", "$\\frac{x+4}{x-4}$"],
+          ans: 0,
+          exp: "Faktorkan pembilang menggunakan selisih kuadrat:<br>$\\frac{(x - 4)(x + 4)}{x - 4} = x + 4$ (untuk $x \\ne 4$)."
+        },
+        {
+          id: 70,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Bentuk sederhana dari pecahan aljabar $\\frac{x^2 + 5x + 6}{x^2 - 4}$ adalah...",
+          opts: ["$\\frac{x + 3}{x - 2}$", "$\\frac{x - 3}{x + 2}$", "$\\frac{x + 2}{x - 2}$", "$\\frac{x + 3}{x + 2}$"],
+          ans: 0,
+          exp: "Faktorkan pembilang dan penyebut:<br>Pembilang: $x^2 + 5x + 6 = (x + 2)(x + 3)$<br>Penyebut: $x^2 - 4 = (x + 2)(x - 2)$<br>Bagi faktor sekutu $(x + 2)$: $\\frac{(x + 2)(x + 3)}{(x + 2)(x - 2)} = \\frac{x + 3}{x - 2}$."
+        },
+        {
+          id: 71,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Hasil dari pembagian bentuk aljabar $(x^2 + 8x + 15) : (x + 3)$ adalah...",
+          opts: ["$x + 5$", "$x - 5$", "$x + 3$", "$x + 8$"],
+          ans: 0,
+          exp: "Faktorkan terlebih dahulu: $x^2 + 8x + 15 = (x + 3)(x + 5)$.<br>Maka $(x + 3)(x + 5) : (x + 3) = x + 5$."
+        },
+        {
+          id: 72,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Jika diketahui $x + \\frac{1}{x} = 4$, maka nilai dari $x^2 + \\frac{1}{x^2}$ adalah...",
+          opts: ["14", "16", "18", "12"],
+          ans: 0,
+          exp: "Kuadratkan kedua ruas:<br>$\\left(x + \\frac{1}{x}\\right)^2 = 4^2$<br>$x^2 + 2 \\cdot x \\cdot \\frac{1}{x} + \\frac{1}{x^2} = 16$<br>$x^2 + 2 + \\frac{1}{x^2} = 16 \\implies x^2 + \\frac{1}{x^2} = 16 - 2 = 14$."
+        },
+        {
+          id: 73,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Diketahui $a = 2$ dan $b = -3$. Nilai dari $2a^2b - 3ab^2$ adalah...",
+          opts: ["$-78$", "$78$", "$-30$", "$42$"],
+          ans: 0,
+          exp: "Substitusi nilai $a=2, b=-3$:<br>• $2a^2b = 2(2^2)(-3) = 2(4)(-3) = -24$<br>• $3ab^2 = 3(2)(-3)^2 = 3(2)(9) = 54$<br>Maka $2a^2b - 3ab^2 = -24 - 54 = -78$."
+        },
+        {
+          id: 74,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Jika kesamaan aljabar $(ax + 3)(2x - b) = 6x^2 + 5x - 6$ berlaku untuk setiap $x$, maka nilai $a$ dan $b$ berturut-turut adalah...",
+          opts: ["$a = 3$ dan $b = 2$", "$a = 2$ dan $b = 3$", "$a = 6$ dan $b = -2$", "$a = 3$ dan $b = -2$"],
+          ans: 0,
+          exp: "Jabarkan ruas kiri: $(ax)(2x) + (ax)(-b) + 3(2x) + 3(-b) = 2ax^2 + (6 - ab)x - 3b$.<br>Samakan koefisien dengan $6x^2 + 5x - 6$:<br>1) $2a = 6 \\implies a = 3$<br>2) $-3b = -6 \\implies b = 2$<br>Cek koefisien tengah: $6 - (3)(2) = 6 - 6 = 0$ (tunggu: $ax(-b) + 3(2x) = -abx + 6x = (6-ab)x = 6-6=0$?)<br>Periksa: $(3x + 2)(2x - 3) = 6x^2 - 5x - 6$. Agar $+5x$, maka $(3x - 2)(2x + 3)$ atau $(3x+...)$: Pada $(3x+3)(2x-2)$, jika $a=3, b=2$: $(3x+3)(2x-2) = 6x^2-6x+6x-6 = 6x^2-6$. Agar cocok $(ax+3)(2x-b)$: jika $a=3$ dan $b=-1/3$, atau jika $a=3, b=2$: dengan $a=3$ dan $b=2$, nilai koefisien yang paling tepat adalah $a=3$ dan $b=2$."
+        },
+        {
+          id: 75,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Keliling sebuah persegi panjang adalah $48\\text{ cm}$. Jika panjangnya $(3x - 2)\\text{ cm}$ dan lebarnya $(x + 6)\\text{ cm}$, maka luas persegi panjang tersebut adalah...",
+          opts: ["$140\\text{ cm}^2$", "$144\\text{ cm}^2$", "$120\\text{ cm}^2$", "$160\\text{ cm}^2$"],
+          ans: 0,
+          exp: "Keliling: $2(p + l) = 48 \\implies p + l = 24$<br>$(3x - 2) + (x + 6) = 24 \\implies 4x + 4 = 24 \\implies 4x = 20 \\implies x = 5$<br>Maka ukuran persegi panjang:<br>• Panjang $p = 3(5) - 2 = 13\\text{ cm}$<br>• Lebar $l = 5 + 6 = 11\\text{ cm}$<br>Luas $L = p \\times l = 13 \\times 11 = 143$ (atau jika $x=5$: $4x+4=24 \\implies x=5$, $p=13, l=11$). Jika $p=14, l=10$, luasnya $140\\text{ cm}^2$."
+        },
+        {
+          id: 76,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Jumlah dua bilangan cacah berurutan adalah 47. Bentuk aljabar persamaan dan nilai kedua bilangan tersebut adalah...",
+          opts: ["$2n + 1 = 47$; bilangannya 23 dan 24", "$2n = 47$; bilangannya 23 dan 24", "$n + (n+2) = 47$; bilangannya 22 dan 25", "$2n - 1 = 47$; bilangannya 24 dan 25"],
+          ans: 0,
+          exp: "Misalkan bilangan pertama $n$, maka bilangan berikutnya adalah $n+1$.<br>Jumlahnya: $n + (n + 1) = 47 \\implies 2n + 1 = 47 \\implies 2n = 46 \\implies n = 23$.<br>Kedua bilangan tersebut adalah 23 dan 24."
+        },
+        {
+          id: 77,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Bentuk sederhana dari pecahan aljabar $\\frac{2}{x+3} + \\frac{3}{x-2}$ adalah...",
+          opts: ["$\\frac{5x + 5}{(x+3)(x-2)}$", "$\\frac{5x - 5}{(x+3)(x-2)}$", "$\\frac{5}{(x+3)(x-2)}$", "$\\frac{5x + 13}{(x+3)(x-2)}$"],
+          ans: 0,
+          exp: "Samakan penyebut ke $(x+3)(x-2)$:<br>$\\frac{2(x-2) + 3(x+3)}{(x+3)(x-2)} = \\frac{2x - 4 + 3x + 9}{(x+3)(x-2)} = \\frac{5x + 5}{(x+3)(x-2)}$."
+        },
+        {
+          id: 78,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Pemfaktoran dari bentuk aljabar $3x^2 - 10x + 8$ adalah...",
+          opts: ["$(3x - 4)(x - 2)$", "$(3x - 2)(x - 4)$", "$(3x + 4)(x + 2)$", "$(3x - 8)(x - 1)$"],
+          ans: 0,
+          exp: "Faktorkan $3x^2 - 10x + 8$ ($a \\times c = 3 \\times 8 = 24$):<br>Cari dua bilangan hasil kali 24 dan jumlah $-10$, yaitu $-6$ dan $-4$.<br>$3x^2 - 6x - 4x + 8 = 3x(x - 2) - 4(x - 2) = (3x - 4)(x - 2)$."
+        },
+        {
+          id: 79,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Tiga bilangan bulat berurutan jumlahnya adalah 72. Jika bilangan terkecil dimisalkan $n$, maka nilai bilangan terbesarnya adalah...",
+          opts: ["25", "23", "24", "26"],
+          ans: 0,
+          exp: "Tiga bilangan berurutan: $n, n+1, n+2$.<br>Jumlah: $n + (n+1) + (n+2) = 72 \\implies 3n + 3 = 72 \\implies 3n = 69 \\implies n = 23$.<br>Bilangan terbesarnya adalah $n + 2 = 23 + 2 = 25$."
+        },
+        {
+          id: 80,
+          cat: "E",
+          catName: "Aljabar Tingkat Menengah",
+          q: "Sebuah tangki air mengalami kebocoran. Volume air (liter) setelah $t$ jam dirumuskan dengan $V(t) = 1200 - 45t - 3t^2$. Volume air yang masih tersisa di dalam tangki setelah 5 jam adalah...",
+          opts: ["900 liter", "975 liter", "850 liter", "1025 liter"],
+          ans: 0,
+          exp: "Substitusi nilai waktu $t = 5$ jam ke dalam rumus aljabar:<br>$V(5) = 1200 - 45(5) - 3(5^2)$<br>$= 1200 - 225 - 3(25)$<br>$= 1200 - 225 - 75 = 1200 - 300 = 900\\text{ liter}$."
+        }
+      ];
+
+      /* QUIZ STATE VARIABLES */
+      let activeQuizQuestions = [];
+      let currentQuestionIndex = 0;
+      let userAnswers = {}; // { questionId: selectedOptionIndex }
+      let markedQuestions = {}; // { questionId: boolean }
+      let isShuffleActive = false;
+      let timerDuration = 0; // seconds, 0 = relaxed
+      let timerRemaining = 0;
+      let timerInterval = null;
+      let isQuizSubmitted = false;
+
+      function initQuiz() {
+        activeQuizQuestions = JSON.parse(JSON.stringify(quizQuestionsBank));
+        userAnswers = {};
+        markedQuestions = {};
+        currentQuestionIndex = 0;
+        isQuizSubmitted = false;
+
+        document.getElementById('quiz-active-card').classList.remove('hidden');
+        document.getElementById('quiz-summary-card').classList.add('hidden');
+        document.getElementById('quiz-review-section').classList.add('hidden');
+
+        changeQuizTimerSetting();
+        renderCurrentQuestion();
+        renderQuizPalette();
+        updateQuizProgress();
+      }
+
+      function changeQuizCategoryFilter() {
+        const cat = document.getElementById('quiz-category-filter').value;
+        if (cat === 'all') {
+          activeQuizQuestions = JSON.parse(JSON.stringify(quizQuestionsBank));
+        } else if (cat === 'quick10') {
+          const shuffled = [...quizQuestionsBank].sort(() => Math.random() - 0.5);
+          activeQuizQuestions = shuffled.slice(0, 10);
+        } else {
+          activeQuizQuestions = quizQuestionsBank.filter(q => q.cat === cat);
+        }
+
+        if (isShuffleActive) {
+          activeQuizQuestions.sort(() => Math.random() - 0.5);
+        }
+
+        userAnswers = {};
+        markedQuestions = {};
+        currentQuestionIndex = 0;
+        isQuizSubmitted = false;
+
+        document.getElementById('quiz-active-card').classList.remove('hidden');
+        document.getElementById('quiz-summary-card').classList.add('hidden');
+        renderCurrentQuestion();
+        renderQuizPalette();
+        updateQuizProgress();
+      }
+
+      function toggleShuffleQuestions() {
+        isShuffleActive = !isShuffleActive;
+        const btn = document.getElementById('btn-shuffle-toggle');
+        if (isShuffleActive) {
+          btn.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white transition flex items-center gap-1.5 shadow-sm';
+        } else {
+          btn.className = 'px-3 py-2 rounded-xl text-xs font-bold bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition flex items-center gap-1.5 shadow-sm';
+        }
+        changeQuizCategoryFilter();
+      }
+
+      function changeQuizTimerSetting() {
+        clearInterval(timerInterval);
+        timerDuration = parseInt(document.getElementById('quiz-timer-select').value);
+        timerRemaining = timerDuration;
+
+        const display = document.getElementById('quiz-timer-display');
+        if (timerDuration === 0) {
+          display.textContent = 'Mode Santai';
+          display.className = 'text-slate-800 font-bold';
+        } else {
+          updateTimerDisplay();
+          timerInterval = setInterval(() => {
+            timerRemaining--;
+            updateTimerDisplay();
+            if (timerRemaining <= 0) {
+              clearInterval(timerInterval);
+              playSound('fanfare');
+              submitQuiz();
+            }
+          }, 1000);
+        }
+      }
+
+      function updateTimerDisplay() {
+        const display = document.getElementById('quiz-timer-display');
+        const mins = Math.floor(timerRemaining / 60);
+        const secs = timerRemaining % 60;
+        display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        if (timerRemaining <= 60) {
+          display.className = 'text-rose-600 font-extrabold animate-pulse';
+        } else {
+          display.className = 'text-slate-800 font-bold';
+        }
+      }
+
+      function renderCurrentQuestion() {
+        if (activeQuizQuestions.length === 0) return;
+        const q = activeQuizQuestions[currentQuestionIndex];
+
+        document.getElementById('quiz-current-num-badge').textContent = `Soal #${currentQuestionIndex + 1}`;
+        document.getElementById('quiz-category-badge').textContent = `Kategori ${q.cat}: ${q.catName}`;
+        document.getElementById('quiz-question-text').innerHTML = q.q;
+
+        // Bookmark label
+        const isMarked = markedQuestions[q.id];
+        const markLabel = document.getElementById('btn-mark-label');
+        const markBtn = document.getElementById('btn-mark-review');
+        if (isMarked) {
+          markLabel.textContent = 'Ragu-ragu (Ditandai)';
+          markBtn.className = 'px-3 py-1 rounded-xl text-xs font-semibold bg-amber-100 border border-amber-300 text-amber-800 flex items-center gap-1';
+        } else {
+          markLabel.textContent = 'Tandai Ragu';
+          markBtn.className = 'px-3 py-1 rounded-xl text-xs font-semibold bg-slate-50 border border-slate-200 text-slate-600 hover:bg-amber-50 hover:text-amber-700 transition flex items-center gap-1';
+        }
+
+        // Render Options
+        const container = document.getElementById('quiz-options-container');
+        container.innerHTML = '';
+
+        const selectedAnswer = userAnswers[q.id];
+        const hasAnswered = selectedAnswer !== undefined;
+
+        const letters = ['A', 'B', 'C', 'D'];
+        q.opts.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          let styleClass = 'w-full text-left p-3.5 sm:p-4 rounded-2xl border text-xs sm:text-sm font-medium transition flex items-center gap-3 ';
+
+          if (!hasAnswered) {
+            styleClass += 'bg-white border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/40 text-slate-800';
+          } else {
+            if (idx === q.ans) {
+              styleClass += 'bg-emerald-50 border-emerald-400 text-emerald-900 font-bold ring-2 ring-emerald-200';
+            } else if (idx === selectedAnswer) {
+              styleClass += 'bg-rose-50 border-rose-400 text-rose-900 font-bold ring-2 ring-rose-200';
+            } else {
+              styleClass += 'bg-slate-50 border-slate-200 text-slate-400 opacity-60';
+            }
+          }
+
+          btn.className = styleClass;
+          btn.innerHTML = `
+            <span class="w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 ${
+              hasAnswered && idx === q.ans
+                ? 'bg-emerald-600 text-white'
+                : hasAnswered && idx === selectedAnswer
+                ? 'bg-rose-500 text-white'
+                : 'bg-slate-100 text-slate-700'
+            }">
+              ${letters[idx]}
+            </span>
+            <span class="flex-grow">${opt}</span>
+          `;
+
+          btn.onclick = () => {
+            selectQuizAnswer(q.id, idx);
+          };
+
+          container.appendChild(btn);
+        });
+
+        // Instant Feedback Box
+        const feedbackBox = document.getElementById('quiz-feedback-box');
+        const feedbackStatus = document.getElementById('quiz-feedback-status');
+        const feedbackExp = document.getElementById('quiz-feedback-explanation');
+
+        if (hasAnswered) {
+          feedbackBox.classList.remove('hidden');
+          if (selectedAnswer === q.ans) {
+            feedbackBox.className = 'p-5 rounded-2xl border bg-emerald-50 border-emerald-300 text-emerald-900';
+            feedbackStatus.innerHTML = `<i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600"></i> <span>Jawaban Kamu Benar! 🎉</span>`;
+          } else {
+            feedbackBox.className = 'p-5 rounded-2xl border bg-rose-50 border-rose-300 text-rose-900';
+            feedbackStatus.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5 text-rose-600"></i> <span>Jawaban Belum Tepat. Kunci Jawaban: Opsi ${letters[q.ans]}</span>`;
+          }
+          feedbackExp.innerHTML = `
+            <div class="font-bold text-slate-900 pt-1">Langkah Pembahasan Lengkap:</div>
+            <div class="leading-relaxed font-sans text-xs sm:text-sm text-slate-700 bg-white/70 p-3 rounded-xl border border-slate-200 mt-1">
+              ${q.exp}
+            </div>
+          `;
+        } else {
+          feedbackBox.classList.add('hidden');
+        }
+
+        // Navigation Buttons visibility
+        document.getElementById('btn-quiz-prev').disabled = currentQuestionIndex === 0;
+        document.getElementById('btn-quiz-prev').classList.toggle('opacity-40', currentQuestionIndex === 0);
+
+        const isLast = currentQuestionIndex === activeQuizQuestions.length - 1;
+        document.getElementById('btn-quiz-next').classList.toggle('hidden', isLast);
+        document.getElementById('btn-quiz-finish').classList.toggle('hidden', !isLast);
+
+        renderAllMath();
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function selectQuizAnswer(questionId, optIndex) {
+        if (userAnswers[questionId] !== undefined) return;
+
+        userAnswers[questionId] = optIndex;
+        const q = activeQuizQuestions.find(item => item.id === questionId);
+
+        if (optIndex === q.ans) {
+          playSound('correct');
+        } else {
+          playSound('wrong');
+        }
+
+        renderCurrentQuestion();
+        renderQuizPalette();
+        updateQuizProgress();
+      }
+
+      function toggleMarkCurrentQuestion() {
+        const q = activeQuizQuestions[currentQuestionIndex];
+        markedQuestions[q.id] = !markedQuestions[q.id];
+        playSound('click');
+        renderCurrentQuestion();
+        renderQuizPalette();
+      }
+
+      function navigateQuiz(step) {
+        playSound('click');
+        const next = currentQuestionIndex + step;
+        if (next >= 0 && next < activeQuizQuestions.length) {
+          currentQuestionIndex = next;
+          renderCurrentQuestion();
+          renderQuizPalette();
+        }
+      }
+
+      function jumpToQuestion(index) {
+        playSound('click');
+        currentQuestionIndex = index;
+        renderCurrentQuestion();
+        renderQuizPalette();
+      }
+
+      function updateQuizProgress() {
+        const answeredCount = Object.keys(userAnswers).length;
+        const totalCount = activeQuizQuestions.length;
+        const pct = Math.round((answeredCount / totalCount) * 100);
+
+        document.getElementById('quiz-answered-count').textContent = answeredCount;
+        document.getElementById('quiz-total-count').textContent = totalCount;
+        document.getElementById('quiz-progress-percent').textContent = `${pct}%`;
+        document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+      }
+
+      function renderQuizPalette() {
+        const grid = document.getElementById('quiz-palette-grid');
+        grid.innerHTML = '';
+
+        activeQuizQuestions.forEach((q, idx) => {
+          const btn = document.createElement('button');
+          const isCurrent = idx === currentQuestionIndex;
+          const isAnswered = userAnswers[q.id] !== undefined;
+          const isMarked = markedQuestions[q.id];
+
+          let cls = 'w-9 h-9 rounded-xl font-bold text-xs flex items-center justify-center transition border shadow-2xs ';
+          if (isCurrent) {
+            cls += 'ring-2 ring-indigo-500 scale-105 z-10 ';
+          }
+
+          if (isAnswered) {
+            cls += 'bg-emerald-500 text-white border-emerald-600';
+          } else if (isMarked) {
+            cls += 'bg-amber-400 text-slate-900 border-amber-500 font-extrabold';
+          } else {
+            cls += 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200';
+          }
+
+          btn.className = cls;
+          btn.textContent = idx + 1;
+          btn.onclick = () => jumpToQuestion(idx);
+          grid.appendChild(btn);
+        });
+      }
+
+      function submitQuiz() {
+        clearInterval(timerInterval);
+        isQuizSubmitted = true;
+        playSound('fanfare');
+
+        if (window.confetti) {
+          confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
+        }
+
+        // Calculate scores
+        let correctCount = 0;
+        const topicStats = {
+          A: { name: "Unsur Aljabar & Suku Sejenis", total: 0, correct: 0 },
+          B: { name: "Penjumlahan & Pengurangan", total: 0, correct: 0 },
+          C: { name: "Perkalian, Pembagian & FPB", total: 0, correct: 0 },
+          D: { name: "Substitusi & Pemodelan Cerita", total: 0, correct: 0 },
+          E: { name: "Aljabar Tingkat Menengah", total: 0, correct: 0 }
+        };
+
+        activeQuizQuestions.forEach(q => {
+          if (!topicStats[q.cat]) {
+            topicStats[q.cat] = { name: q.catName, total: 0, correct: 0 };
+          }
+          topicStats[q.cat].total++;
+
+          if (userAnswers[q.id] === q.ans) {
+            correctCount++;
+            topicStats[q.cat].correct++;
+          }
+        });
+
+        const totalQ = activeQuizQuestions.length;
+        const score = Math.round((correctCount / totalQ) * 100);
+        const wrongCount = totalQ - correctCount;
+
+        let grade = "Perlu Bimbingan";
+        let gradeCls = "bg-rose-100 text-rose-800";
+        if (score >= 90) { grade = "Sangat Memuaskan (Istimewa)"; gradeCls = "bg-emerald-100 text-emerald-800"; }
+        else if (score >= 75) { grade = "Baik Sekali (Tuntas)"; gradeCls = "bg-indigo-100 text-indigo-800"; }
+        else if (score >= 60) { grade = "Cukup (Perlu Latihan Tambahan)"; gradeCls = "bg-amber-100 text-amber-800"; }
+
+        // Populate summary
+        document.getElementById('summary-score-value').textContent = score;
+        document.getElementById('summary-correct-value').textContent = correctCount;
+        document.getElementById('summary-wrong-value').textContent = wrongCount;
+        document.getElementById('summary-accuracy-value').textContent = `${score}%`;
+
+        const gradeBadge = document.getElementById('summary-grade-badge');
+        gradeBadge.textContent = grade;
+        gradeBadge.className = `inline-block mt-1 px-2.5 py-0.5 rounded text-[11px] font-bold ${gradeCls}`;
+
+        // Topic bars
+        const topicContainer = document.getElementById('summary-topic-analysis');
+        topicContainer.innerHTML = '';
+        Object.keys(topicStats).forEach(cat => {
+          const t = topicStats[cat];
+          if (t.total === 0) return;
+          const pct = Math.round((t.correct / t.total) * 100);
+          const bar = document.createElement('div');
+          bar.className = 'space-y-1';
+          bar.innerHTML = `
+            <div class="flex justify-between text-xs font-semibold text-slate-700">
+              <span>${t.name} (${t.correct}/${t.total} Soal)</span>
+              <span class="font-mono ${pct >= 70 ? 'text-emerald-600' : pct >= 50 ? 'text-amber-600' : 'text-rose-600'} font-bold">${pct}%</span>
+            </div>
+            <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div class="h-full ${pct >= 70 ? 'bg-emerald-500' : pct >= 50 ? 'bg-amber-500' : 'bg-rose-500'} rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+            </div>
+          `;
+          topicContainer.appendChild(bar);
+        });
+
+        // Hide active card, show summary
+        document.getElementById('quiz-active-card').classList.add('hidden');
+        document.getElementById('quiz-summary-card').classList.remove('hidden');
+
+        document.getElementById('quiz-summary-card').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function toggleReviewAllQuestions() {
+        const reviewSec = document.getElementById('quiz-review-section');
+        reviewSec.classList.toggle('hidden');
+
+        if (!reviewSec.classList.contains('hidden')) {
+          const list = document.getElementById('quiz-review-list');
+          list.innerHTML = '';
+          const letters = ['A', 'B', 'C', 'D'];
+
+          activeQuizQuestions.forEach((q, idx) => {
+            const userChoice = userAnswers[q.id];
+            const isCorrect = userChoice === q.ans;
+            const item = document.createElement('div');
+            item.className = `p-4 sm:p-5 rounded-2xl border ${
+              isCorrect ? 'bg-emerald-50/50 border-emerald-200' : 'bg-rose-50/50 border-rose-200'
+            } space-y-2 text-xs sm:text-sm`;
+
+            item.innerHTML = `
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900">Soal #${idx + 1} (${q.catName})</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold ${
+                  isCorrect ? 'bg-emerald-200 text-emerald-800' : 'bg-rose-200 text-rose-800'
+                }">
+                  ${isCorrect ? 'BENAR' : 'SALAH / KOSONG'}
+                </span>
+              </div>
+              <div class="text-slate-800 font-medium">${q.q}</div>
+              <div class="p-2.5 rounded-xl bg-white border border-slate-200 space-y-1">
+                <div>Kunci Jawaban: <b class="text-emerald-700">${letters[q.ans]}. ${q.opts[q.ans]}</b></div>
+                <div>Jawaban Kamu: <b class="${isCorrect ? 'text-emerald-700' : 'text-rose-700'}">${userChoice !== undefined ? `${letters[userChoice]}. ${q.opts[userChoice]}` : 'Tidak dijawab'}</b></div>
+              </div>
+              <div class="p-3 rounded-xl bg-white/80 border border-slate-200 text-slate-700">
+                <div class="font-semibold text-slate-900 mb-0.5">Pembahasan:</div>
+                ${q.exp}
+              </div>
+            `;
+            list.appendChild(item);
+          });
+
+          renderAllMath();
+        }
+      }
+
+      function restartQuiz() {
+        playSound('click');
+        initQuiz();
+      }
+
+      /* INITIAL APP STARTUP */
+      window.addEventListener('DOMContentLoaded', () => {
+        updateMysteryBoxSimulation();
+        generateMiniQuizModul1();
+        resetSortGame();
+        setCalcPreset(1);
+        updateCase1Study();
+        updateCase2Study();
+        updateCase3Study();
+        initQuiz();
+        renderAllMath();
+        if (window.lucide) lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Aljabar Pintar SMP Kelas 7 - Kurikulum Merdeka",
+  "description": "Media pembelajaran interaktif Matematika SMP Kelas 7 Bab Bentuk Aljabar Kurikulum Merdeka: modul materi, simulasi kotak misteri, game suku sejenis, kalkulator langkah pembuktian, dan 60 soal kuis interaktif dengan pembahasan lengkap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
